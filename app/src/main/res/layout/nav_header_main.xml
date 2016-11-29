@@ -19,7 +19,7 @@
         android:layout_width="75dp"
         android:layout_height="67dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/logo1_vectorized"
+
         android:layout_weight="0.59"/>
 
     <TextView
