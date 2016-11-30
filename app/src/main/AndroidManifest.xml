@@ -18,6 +18,30 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".EventsActivity">
+
+        </activity>
+        <activity android:name=".MonumentsActivity">
+
+        </activity>
+        <activity android:name=".AccommodationActivity">
+
+        </activity>
+        <activity android:name=".EntertainmentActivity">
+
+        </activity>
+        <activity android:name=".FoodDrinkActivity">
+
+        </activity>
+        <activity android:name=".BussesActivity">
+
+        </activity>
+        <activity android:name=".AboutUsActivity">
+
+        </activity>
+        <activity android:name=".ContactUsActivity">
+
+        </activity>
     </application>
 
 </manifest>
