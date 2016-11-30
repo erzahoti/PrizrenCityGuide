@@ -91,42 +91,34 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_events) {
-            Toast.makeText(this, "Events Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, EventsActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_monuments) {
-            Toast.makeText(this, "Monuments Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MonumentsActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_entertainment) {
-            Toast.makeText(this, "Entertainment Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, EntertainmentActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_food_and_drink) {
-            Toast.makeText(this, "Food and Drink Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, FoodDrinkActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_accomodation) {
-            Toast.makeText(this, "Accommodation Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AccommodationActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_busses) {
-            Toast.makeText(this, "Busses Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, BussesActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_about_us) {
-            Toast.makeText(this, "About Us Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AboutUsActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.nav_contact) {
-            Toast.makeText(this, "Contact Us Activity", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ContactUsActivity.class);
             startActivity(intent);
             return true;
