@@ -13,5 +13,6 @@ public class EntertainmentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Toast.makeText(this, "Entertainment Activity", Toast.LENGTH_SHORT).show();
+
     }
 }

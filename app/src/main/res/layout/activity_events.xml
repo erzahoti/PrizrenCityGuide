@@ -5,6 +5,7 @@
               android:layout_height="match_parent"
               android:weightSum="1">
 
+
     <TextView
         android:text="You are linked in the page of events"
         android:textSize="20dp"

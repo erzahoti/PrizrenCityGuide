@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -30,7 +31,8 @@
             android:title="Busses"/>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Communicate"
+        >
         <menu>
             <item
                 android:id="@+id/nav_about_us"
