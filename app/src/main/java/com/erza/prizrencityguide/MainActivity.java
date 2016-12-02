@@ -15,16 +15,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import java.util.ArrayList;
+import android.util.Log;
+
+import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
 
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         public String Test="test";
+    private FeatureCoverFlow coverFlow;
+    private CoverFlowAdapter adapter;
+    private ArrayList<Game> games;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        coverFlow = (FeatureCoverFlow) findViewById(R.id.coverflow);
+
+        settingDummyData();
+        adapter = new CoverFlowAdapter(this, games);
+        coverFlow.setAdapter(adapter);
+        coverFlow.setOnScrollPositionListener(onScrollListener());
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -128,5 +143,28 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private FeatureCoverFlow.OnScrollPositionListener onScrollListener() {
+        return new FeatureCoverFlow.OnScrollPositionListener() {
+            @Override
+            public void onScrolledToPosition(int position) {
+                Log.v("MainActiivty", "position: " + position);
+            }
+
+            @Override
+            public void onScrolling() {
+                Log.i("MainActivity", "scrolling");
+            }
+        };
+    }
+
+    private void settingDummyData() {
+        games = new ArrayList<>();
+        games.add(new Game(R.mipmap.pic1, ""));
+        games.add(new Game(R.mipmap.pic2, ""));
+        games.add(new Game(R.mipmap.pic3, ""));
+        games.add(new Game(R.mipmap.pic4, ""));
+        games.add(new Game(R.mipmap.pic5, ""));
+        games.add(new Game(R.mipmap.pic6, ""));
     }
 }
