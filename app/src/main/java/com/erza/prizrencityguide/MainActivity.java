@@ -24,10 +24,11 @@ import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-        public String Test="test";
-    private FeatureCoverFlow coverFlow;
-    private CoverFlowAdapter adapter;
-    private ArrayList<Game> games;
+
+        private FeatureCoverFlow coverFlow;
+        private CoverFlowAdapter adapter;
+        private ArrayList<Game> games;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

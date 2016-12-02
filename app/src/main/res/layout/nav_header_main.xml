@@ -11,16 +11,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#333333"
+    android:background="#222222"
 
     android:weightSum="1">
 
     <ImageView
-        android:layout_width="136dp"
         android:layout_height="wrap_content"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/ic_logo"
         android:layout_gravity="center"
-        android:layout_weight="0.56"/>
+        android:layout_weight="0.64"
+        android:layout_width="260dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,13 +32,4 @@
         android:fontFamily="sans-serif"
         android:layout_gravity="center"
         android:textSize="18sp"/>
-
-
-    <!-- <TextView
-         android:id="@+id/textView"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:textColor="#660000"
-         android:text="prizrencityguide@pz.com"/> -->
-
 </LinearLayout>
