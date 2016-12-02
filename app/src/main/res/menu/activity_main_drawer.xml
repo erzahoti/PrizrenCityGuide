@@ -5,29 +5,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_events"
-            android:icon="@drawable/ic_event"
+            android:icon="@mipmap/ic_events"
             android:title="Events"/>
         <item
             android:id="@+id/nav_monuments"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_monuments"
             android:title="Monuments"/>
         <item
             android:id="@+id/nav_entertainment"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/ic_entertainment"
             android:title="Entertainment"/>
         <item
             android:id="@+id/nav_food_and_drink"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@mipmap/ic_food_and_drink"
             android:title="Food and Drink"/>
 
         <item
             android:id="@+id/nav_accomodation"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@mipmap/ic_accommodation"
             android:title="Accommodation"/>
 
         <item
             android:id="@+id/nav_busses"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@mipmap/ic_busses"
             android:title="Busses"/>
     </group>
 
@@ -36,11 +36,11 @@
         <menu>
             <item
                 android:id="@+id/nav_about_us"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@mipmap/ic_about_us"
                 android:title="About Us"/>
             <item
                 android:id="@+id/nav_contact"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@mipmap/ic_contact"
                 android:title="Contact"/>
         </menu>
     </item>
