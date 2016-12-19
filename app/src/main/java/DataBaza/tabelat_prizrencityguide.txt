@@ -1,0 +1,61 @@
+create table admini (
+	id int primary key,
+	emri string not null,
+	email string unique,
+	fjalekalimi string not null
+);
+
+insert into admini(emri,email,fjalekalimi) values("Erza","erza@pcg.com","erzapcg");
+insert into admini(emri,email,fjalekalimi) values("Besmire Thaqi","bese@pcg.com","besepcg");
+insert into admini(emri,email,fjalekalimi) values("Valon Kito","valon@pcg.com","valonpcg");
+insert into admini(emri,email,fjalekalimi) values("Egzon Gollopeni","egzon@pcg.com","egzonpcg");
+
+insert into admini(emri,email,fjalekalimi) values("Donika Jusufi","donika@pcg.com","donikapcg");
+
+
+create table monumentet (
+	id int primary key,
+	emri string not null,
+	lokacioni string not null,
+	koordinantat string unique,
+	imazhi blob not null,
+	pershkrimi string not null
+);
+
+create table accommodation (
+	id int primary key,
+	emri string not null,
+	lloji string not null,
+	lokacioni string not null,
+	koordinantat string unique,
+	imazhi blob not null,
+	cmimi double not null,
+	pershkrimi string not null
+);
+
+
+create table food_drink (
+	id int primary key,
+	emri string not null,
+	lloji string not null,
+	lokacioni string not null,
+	koordinantat string unique,
+	imazhi blob not null,
+	pershkrimi string not null
+);
+
+create table entertainment (
+	id int primary key,
+	emri string not null,
+	lloji string not null,
+	lokacioni string not null,
+	koordinantat string unique,
+	imazhi blob not null,
+	pershkrimi string not null
+);
+
+create table busses (
+	id int primary key,
+	linja string not null,
+	cmimi double
+);
