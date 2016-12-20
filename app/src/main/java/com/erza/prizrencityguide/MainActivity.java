@@ -108,36 +108,28 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_events) {
-            Intent intent = new Intent(this, EventsActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_monuments) {
-            Intent intent = new Intent(this, MonumentsActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_entertainment) {
-            Intent intent = new Intent(this, EntertainmentActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_food_and_drink) {
-            Intent intent = new Intent(this, FoodDrinkActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_accomodation) {
-            Intent intent = new Intent(this, AccommodationActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_busses) {
-            Intent intent = new Intent(this, BussesActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_about_us) {
-            Intent intent = new Intent(this, AboutUsActivity.class);
-            startActivity(intent);
+
             return true;
         } else if (id == R.id.nav_contact) {
-            Intent intent = new Intent(this, ContactUsActivity.class);
-            startActivity(intent);
+
             return true;
         }
 
