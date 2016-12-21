@@ -4,6 +4,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+        <item
             android:id="@+id/nav_events"
             android:icon="@mipmap/ic_events"
             android:title="Events"/>
@@ -21,7 +25,7 @@
             android:title="Food and Drink"/>
 
         <item
-            android:id="@+id/nav_accomodation"
+            android:id="@+id/nav_accommodation"
             android:icon="@mipmap/ic_accommodation"
             android:title="Accommodation"/>
 

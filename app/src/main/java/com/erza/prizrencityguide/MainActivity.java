@@ -19,29 +19,18 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.erza.prizrencityguide.Fragments.Accommodation;
-import com.erza.prizrencityguide.Fragments.FoodDrink;
-
-import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
-
+import com.erza.prizrencityguide.Fragments.Home;
+import com.erza.prizrencityguide.Fragments.Monuments;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-        private FeatureCoverFlow coverFlow;
-        private CoverFlowAdapter adapter;
-        private ArrayList<Game> games;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        coverFlow = (FeatureCoverFlow) findViewById(R.id.coverflow);
-
-        settingDummyData();
-        adapter = new CoverFlowAdapter(this, games);
-        coverFlow.setAdapter(adapter);
-        coverFlow.setOnScrollPositionListener(onScrollListener());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -113,17 +102,25 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_events) {
+        if (id == R.id.nav_home) {
 
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+            Home home = new Home();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
+        } else if (id == R.id.nav_events) {
             return true;
         } else if (id == R.id.nav_monuments) {
 
-            return true;
+            Toast.makeText(this, "Monuments", Toast.LENGTH_SHORT).show();
+            Monuments monuments = new Monuments();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, monuments, monuments.getTag()).commit();
         } else if (id == R.id.nav_entertainment) {
-
+            return true;
         } else if (id == R.id.nav_food_and_drink) {
-
-        } else if (id == R.id.nav_accomodation) {
+            return true;
+        } else if (id == R.id.nav_accommodation) {
             Toast.makeText(this, "Accommodation", Toast.LENGTH_SHORT).show();
             Accommodation accommodation = new Accommodation();
             FragmentManager manager = getSupportFragmentManager();
@@ -144,27 +141,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private FeatureCoverFlow.OnScrollPositionListener onScrollListener() {
-        return new FeatureCoverFlow.OnScrollPositionListener() {
-            @Override
-            public void onScrolledToPosition(int position) {
-                Log.v("MainActiivty", "position: " + position);
-            }
 
-            @Override
-            public void onScrolling() {
-                Log.i("MainActivity", "scrolling");
-            }
-        };
-    }
 
-    private void settingDummyData() {
-        games = new ArrayList<>();
-        games.add(new Game(R.mipmap.pic1, ""));
-        games.add(new Game(R.mipmap.pic2, ""));
-        games.add(new Game(R.mipmap.pic3, ""));
-        games.add(new Game(R.mipmap.pic4, ""));
-        games.add(new Game(R.mipmap.pic5, ""));
-        games.add(new Game(R.mipmap.pic6, ""));
-    }
+
 }
