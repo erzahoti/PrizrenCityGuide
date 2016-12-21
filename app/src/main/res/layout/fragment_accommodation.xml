@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/accommodation_ls"
+             tools:context="com.erza.prizrencityguide.Fragments.Accommodation">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/accommodation_string"
+        android:id="@+id/accommodation_layout"
+        android:textColor="@color/cardview_dark_background"/>
+
+</FrameLayout>
