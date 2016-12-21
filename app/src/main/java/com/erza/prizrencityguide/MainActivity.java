@@ -19,22 +19,19 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.erza.prizrencityguide.Fragments.Accommodation;
-
-
-import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
-
+import com.erza.prizrencityguide.Fragments.FoodDrink;
+import com.erza.prizrencityguide.Fragments.Home;
+import com.erza.prizrencityguide.Fragments.Monuments;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,6 +53,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Home home = new Home();
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
 
     }
 
@@ -106,17 +107,31 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_events) {
+        if (id == R.id.nav_home) {
 
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+            Home home = new Home();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
+        } else if (id == R.id.nav_events) {
             return true;
         } else if (id == R.id.nav_monuments) {
 
-            return true;
-        } else if (id == R.id.nav_entertainment) {
+            Toast.makeText(this, "Monuments", Toast.LENGTH_SHORT).show();
+            Monuments monuments = new Monuments();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, monuments, monuments.getTag()).commit();
 
+        } else if (id == R.id.nav_entertainment) {
+            return true;
         } else if (id == R.id.nav_food_and_drink) {
 
-        } else if (id == R.id.nav_accomodation) {
+            Toast.makeText(this, "Food and drink", Toast.LENGTH_SHORT).show();
+            FoodDrink foodDrink = new FoodDrink();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, foodDrink, foodDrink.getTag()).commit();
+
+        } else if (id == R.id.nav_accommodation) {
             Toast.makeText(this, "Accommodation", Toast.LENGTH_SHORT).show();
             Accommodation accommodation = new Accommodation();
             FragmentManager manager = getSupportFragmentManager();
@@ -137,5 +152,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
 }
