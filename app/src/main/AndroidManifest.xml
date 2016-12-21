@@ -27,10 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MonumentsActivity">
-        </activity>
+
         <activity android:name=".MapsActivity">
-        </activity>
+      </activity>
     </application>
 
 </manifest>

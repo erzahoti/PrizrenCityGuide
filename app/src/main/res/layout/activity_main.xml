@@ -21,8 +21,8 @@
         coverflow:rotationThreshold="0.5"
         coverflow:scalingThreshold="0.5"
         coverflow:spacing="0.6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
 
@@ -33,7 +33,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:theme="@style/AppTheme.NavigationView"
         app:itemTextColor="@color/white"
