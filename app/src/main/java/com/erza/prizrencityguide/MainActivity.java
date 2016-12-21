@@ -122,6 +122,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_entertainment) {
 
         } else if (id == R.id.nav_food_and_drink) {
+            Toast.makeText(this, "FoodDrink", Toast.LENGTH_SHORT).show();
+            FoodDrink foodrink = new FoodDrink();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, foodrink, foodrink.getTag()).commit();
 
         } else if (id == R.id.nav_accomodation) {
             Toast.makeText(this, "Accommodation", Toast.LENGTH_SHORT).show();
