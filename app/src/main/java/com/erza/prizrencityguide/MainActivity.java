@@ -3,9 +3,8 @@ package com.erza.prizrencityguide;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,12 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
-import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.erza.prizrencityguide.Fragments.Accommodation;
+import com.erza.prizrencityguide.Fragments.Entertainment;
 import com.erza.prizrencityguide.Fragments.FoodDrink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Fragments.Monuments;
@@ -123,7 +121,10 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.content_frame, monuments, monuments.getTag()).commit();
 
         } else if (id == R.id.nav_entertainment) {
-            return true;
+            Toast.makeText(this, "Entertainment", Toast.LENGTH_SHORT).show();
+            Entertainment entertainment = new Entertainment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, entertainment, entertainment.getTag()).commit();
         } else if (id == R.id.nav_food_and_drink) {
 
             Toast.makeText(this, "Food and drink", Toast.LENGTH_SHORT).show();
