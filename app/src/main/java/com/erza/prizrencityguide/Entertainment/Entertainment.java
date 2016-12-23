@@ -24,8 +24,6 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class Entertainment extends AppCompatActivity implements AsyncResponse {
-    /*final  String LOG = "ListActivity";*/
-
     private ArrayList<entertainmentDB> productList;
     private ListView lvProduct;
     @Override
