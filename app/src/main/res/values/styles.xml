@@ -16,13 +16,14 @@
     </style>
 
     <style name="CustomTextColor" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-       <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.NavigationView" >
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NavigationView">
         <item name="android:listDivider">@color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
     </style>

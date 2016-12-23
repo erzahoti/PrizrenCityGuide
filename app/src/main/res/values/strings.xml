@@ -23,4 +23,5 @@
     <string name="entertainment_string">Hello blank fragment of entertainment</string>
 
     <string name="busses">Blank fragment for Busses (In progress...)</string>
+    <string name="title_activity_entertainment1">Entertainment1</string>
 </resources>

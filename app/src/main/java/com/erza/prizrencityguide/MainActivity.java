@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.erza.prizrencityguide.Fragments.Accommodation;
 import com.erza.prizrencityguide.Fragments.Busses;
-import com.erza.prizrencityguide.Fragments.Entertainment;
+import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Fragments.FoodDrink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Fragments.Monuments;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
             }
         });
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -122,10 +122,14 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.content_frame, monuments, monuments.getTag()).commit();
 
         } else if (id == R.id.nav_entertainment) {
-            Toast.makeText(this, "Entertainment", Toast.LENGTH_SHORT).show();
-            Entertainment entertainment = new Entertainment();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content_frame, entertainment, entertainment.getTag()).commit();
+            Toast.makeText(MainActivity.this, "Entertainment", Toast.LENGTH_SHORT).show();
+           Entertainment entertainment = new Entertainment();
+            /*FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, entertainment, entertainment.getTag()).commit();*/
+            Intent in = new Intent(MainActivity.this, Entertainment.class);
+            startActivity(in);
+
+
         } else if (id == R.id.nav_food_and_drink) {
 
             Toast.makeText(this, "Food and drink", Toast.LENGTH_SHORT).show();
