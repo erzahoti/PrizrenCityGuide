@@ -38,7 +38,8 @@
         android:lineSpacingExtra="8sp"
         android:layout_gravity="center"
         android:layout_toRightOf="@+id/ivImazhi"
-        android:layout_toEndOf="@+id/ivImazhi" />
+        android:layout_toEndOf="@+id/ivImazhi"
+        android:layout_weight="0.23"/>
 
     <TextView
         android:text="Price"
@@ -48,24 +49,26 @@
         android:lineSpacingExtra="8sp"
         android:textStyle="italic"
         android:textAlignment="textEnd"
-        android:contentDescription="Euro"/>
+        android:contentDescription="Euro"
+        android:textSize="12sp"
+        android:layout_weight="0.23"/>
 
     <TextView
         android:text="Location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvLokacioni"
-        android:layout_weight="0.06"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textAlignment="viewEnd"
-        android:textStyle="normal|italic"/>
+        android:textStyle="normal|italic"
+        android:layout_weight="0.26"/>
 
     <TextView
         android:text="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvPershkrimi"
-        android:layout_weight="0.11"
+        android:layout_weight="0.48"
         android:elegantTextHeight="false"
         android:breakStrategy="simple"
         android:linksClickable="true"
