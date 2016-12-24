@@ -17,8 +17,8 @@ public class FoodDrinkDB {
     public String lloji;
     @SerializedName("lokacioni")
     public String lokacioni;
-    @SerializedName("koordinatat")
-    public String koordinatat;
+    @SerializedName("koordinantat")
+    public String koordinantat;
     @SerializedName("pershkrimi")
     public String pershkrimi;
     @SerializedName("imazhi_link")

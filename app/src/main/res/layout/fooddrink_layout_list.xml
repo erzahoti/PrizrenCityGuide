@@ -16,8 +16,8 @@
     <ImageView
         app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed"
         android:id="@+id/ivImazhi"
-        android:layout_height="300dp"
-        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_width="300dp"
         android:layout_gravity="center"/>
 
     <TextView
@@ -27,10 +27,11 @@
         android:id="@+id/tvName"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        android:lineSpacingExtra="8sp"
+        android:lineSpacingExtra="10sp"
         android:layout_gravity="center"
         android:layout_toRightOf="@+id/ivImazhi"
-        android:layout_toEndOf="@+id/ivImazhi" />
+        android:layout_toEndOf="@+id/ivImazhi"/>
+
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
@@ -42,12 +43,14 @@
 
 
 
+
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvPershkrimi"
         android:layout_weight="0.11"
+        android:padding="10dp"
         android:fontFamily="sans-serif"
         android:elegantTextHeight="false"
         android:breakStrategy="simple"
@@ -61,6 +64,26 @@
         android:id="@+id/tvLokacioni"
         android:layout_weight="0.06"
         android:lineSpacingExtra="8sp" />
+
+
+       <TextView
+           android:text="Coordinates:"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="0.06"
+           android:lineSpacingExtra="8sp"
+           android:textStyle="normal"
+           />
+       <TextView
+           android:text="TextView"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tvKoordinatat"
+           android:layout_weight="0.06"
+           android:lineSpacingExtra="8sp" />
+
+
+
 
 
 </LinearLayout>

@@ -97,6 +97,12 @@ public class FoodDrink extends AppCompatActivity implements AsyncResponse {
                 return "" + FoodDrinkDB.lloji;
             }
         });
+        dict.addStringField(R.id.tvKoordinatat, new StringExtractor<FoodDrinkDB>() {
+            @Override
+            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+                return "" + FoodDrinkDB.koordinantat;
+            }
+        });
 
         dict.addDynamicImageField(R.id.ivImazhi,
                 new StringExtractor<FoodDrinkDB>() {
