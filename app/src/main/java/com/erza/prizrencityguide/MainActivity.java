@@ -17,10 +17,10 @@ import android.widget.Toast;
 
 import com.erza.prizrencityguide.FoodDrink.FoodDrink;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
-import com.erza.prizrencityguide.Fragments.Busses;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
+import com.erza.prizrencityguide.Busses.Busses;
 
 
 public class MainActivity extends AppCompatActivity
@@ -145,10 +145,14 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
 
         }else if (id == R.id.nav_busses) {
+
             Toast.makeText(this, "Busses", Toast.LENGTH_SHORT).show();
             Busses busses = new Busses();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+//            FragmentManager manager = getSupportFragmentManager();
+//            manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+            Intent i = new Intent(MainActivity.this, Busses.class);
+            startActivity(i);
+
         } else if (id == R.id.nav_about_us) {
 
             return true;

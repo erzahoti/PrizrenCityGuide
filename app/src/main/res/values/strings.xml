@@ -25,5 +25,6 @@
     <string name="busses">Blank fragment for Busses (In progress...)</string>
     <string name="title_activity_entertainment1">Entertainment1</string>
     <string name="title_activity_monuments">Monuments</string>
+    <string name="title_activity_busses">Busses</string>
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

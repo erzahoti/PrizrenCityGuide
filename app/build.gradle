@@ -38,5 +38,11 @@ dependencies {
     compile 'com.android.support:support-v4:25.0.1'
     compile 'com.github.amigold.fundapter:library:1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
+    compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.1.0'
+    compile 'com.github.gabrielemariotti.cards:cardslib-recyclerview:2.1.0'
+    compile 'com.github.gabrielemariotti.cards:cardslib-extra-staggeredgrid:2.1.0'
+    compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.1.0'
+
     testCompile 'junit:junit:4.12'
 }

@@ -47,6 +47,11 @@
         <activity android:name=".Accommodation.Accommodation"
                   android:label="Accommodation"
                   android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Busses.Busses"
+            android:label="@string/title_activity_busses"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
