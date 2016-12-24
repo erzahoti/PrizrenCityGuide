@@ -82,6 +82,16 @@
            android:layout_weight="0.06"
            android:lineSpacingExtra="8sp" />
 
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Website"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@color/white"
+        android:layout_gravity="right"
+
+        />
+
 
 
 

@@ -39,7 +39,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".FoodDrink.FoodDrink"
-            android:label="FoodDrink"
+            android:label="Food and Drink"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Monuments.ReadMore">
         </activity>
