@@ -23,10 +23,10 @@
 
     <RatingBar
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         android:id="@+id/ratingbar"
         style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
-        android:layout_weight="0.08"/>
+        />
 
     <TextView
         android:text="Name"
@@ -39,7 +39,8 @@
         android:layout_gravity="center"
         android:layout_toRightOf="@+id/ivImazhi"
         android:layout_toEndOf="@+id/ivImazhi"
-        android:layout_weight="0.23"/>
+        android:layout_weight="0.23"
+        android:fontFamily="sans-serif-smallcaps"/>
 
     <TextView
         android:text="Price"
@@ -51,7 +52,7 @@
         android:textAlignment="textEnd"
         android:contentDescription="Euro"
         android:textSize="12sp"
-        android:layout_weight="0.23"/>
+        android:layout_weight="0.19"/>
 
     <TextView
         android:text="Location"
@@ -61,20 +62,21 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textAlignment="viewEnd"
         android:textStyle="normal|italic"
-        android:layout_weight="0.26"/>
+        android:layout_weight="0.21"/>
 
     <TextView
         android:text="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvPershkrimi"
-        android:layout_weight="0.48"
+        android:layout_weight="0.69"
         android:elegantTextHeight="false"
         android:breakStrategy="simple"
         android:linksClickable="true"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="12sp"
-        android:fontFamily="sans-serif"/>
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/wallet_dim_foreground_holo_dark"/>
 
     <Button
         android:text="Go to the website"
