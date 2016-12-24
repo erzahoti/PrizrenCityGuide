@@ -43,6 +43,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Monuments.ReadMore">
         </activity>
+
+        <activity android:name=".Accommodation.Accommodation"
+                  android:label="Accommodation"
+                  android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

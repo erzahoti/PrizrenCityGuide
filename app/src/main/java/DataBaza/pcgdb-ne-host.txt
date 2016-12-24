@@ -1,0 +1,63 @@
+create table admini (
+	id int primary key,
+	emri varchar(30) not null,
+	email varchar(50) unique,
+	fjalekalimi varchar(50) not null
+);
+
+
+insert into admini(id,emri,email,fjalekalimi) values(0,"Erza Hoti","erza@pcg.com","erzapcg");
+insert into admini(id,emri,email,fjalekalimi) values(1,"Besmire Thaqi","bese@pcg.com","besepcg");
+insert into admini(id,emri,email,fjalekalimi) values(2,"Valon Kito","valon@pcg.com","valonpcg");
+insert into admini(id,emri,email,fjalekalimi) values(3,"Egzon Gollopeni","egzon@pcg.com","egzonpcg");
+insert into admini(id,emri,email,fjalekalimi) values(4,"Donika Jusufi","donika@pcg.com","donikapcg");
+
+
+create table monumentet (
+	id int primary key AUTO_INCREMENT,
+	emri varchar(50) not null,
+	lokacioni varchar(50) not null,
+	koordinantat varchar(50) unique,
+	imazhi blob not null,
+	pershkrimi varchar(1000) not null
+);
+
+create table accommodation (
+	id int primary key AUTO_INCREMENT,
+	emri varchar(50) not null,
+	website varchar(100),
+	lloji varchar(50) not null,
+	lokacioni varchar(100) not null,
+	koordinantat varchar(100) unique,
+	imazhi blob not null,
+	cmimi double not null,
+	pershkrimi varchar(1000) not null
+);
+
+create table food_drink (
+	id int primary key AUTO_INCREMENT,
+	emri varchar(50) not null,
+	lloji varchar(50) not null,
+	lokacioni varchar(100) not null,
+	koordinantat varchar(100) unique,
+	imazhi blob not null,
+	pershkrimi varchar(1000) not null
+);
+
+create table entertainment (
+	id int primary key AUTO_INCREMENT,
+	website varchar(100),
+	emri varchar(50) not null,
+	lloji varchar(50) not null,
+	lokacioni varchar(100) not null,
+	koordinantat varchar(100) unique,
+	imazhi blob not null,
+	pershkrimi varchar(1000) not null
+);
+
+create table busses (
+	id int primary key AUTO_INCREMENT,
+	linja varchar(100) not null,
+	cmimi double
+);
+
