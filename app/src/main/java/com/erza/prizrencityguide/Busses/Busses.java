@@ -1,5 +1,6 @@
 package com.erza.prizrencityguide.Busses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
@@ -23,6 +25,12 @@ import com.kosalgeek.genasync12.PostResponseAsyncTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.internal.CardThumbnail;
+import it.gmariotti.cardslib.library.view.CardListView;
 
 public class Busses extends AppCompatActivity implements AsyncResponse {
     private ArrayList<BussesDB> productList;
@@ -63,34 +71,32 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
     @Override
     public void processFinish(String s) {
         productList = new JsonConverter<BussesDB>().toArrayList(s, BussesDB.class);
-        BindDictionary<BussesDB> dict = new BindDictionary<BussesDB>();
-        dict.addStringField(R.id.tvLinja, new StringExtractor<BussesDB>() {
-            @Override
-            public String getStringValue(BussesDB BussesDB, int i) {
-                return BussesDB.linja;
-            }
-        });
 
-        dict.addDynamicImageField(R.id.tvOrari,
-                new StringExtractor<BussesDB>() {
-                    @Override
-                    public String getStringValue(BussesDB BussesDB, int i) {
-                        return BussesDB.orari;
-                    }
-                }, new DynamicImageLoader() {
-                    @Override
-                    public void loadImage(String link, ImageView imageView) {
-                        Picasso.with(Busses.this).load(link).into(imageView);
-                    }
-                });
+        int listImages[] = new int[]{R.drawable.bus_icon};
+        ArrayList<Card> cards = new ArrayList<Card>();
+        for (int i = 0; i<5; i++) {
+            // Create a Card
+            Card card = new Card(this);
+            // Create a CardHeader
+            CardHeader header = new CardHeader(this);
+            // Add Header to card
+            header.setTitle("Linja "+(i+1));
 
+            card.setTitle(productList.get(i).linja);
+            card.addCardHeader(header);
+            CardThumbnail thumb = new CardThumbnail(this);
+            thumb.setDrawableResource(listImages[0]);
+            card.addCardThumbnail(thumb);
+            cards.add(card);
+        }
 
-        FunDapter<BussesDB> adapter = new FunDapter<>(Busses.this, productList, R.layout.busses_layout_list,dict);
-        lvProduct = (ListView)findViewById(R.id.lvProduct);
-        lvProduct.setAdapter(adapter);
+        CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards);
+        CardListView listView = (CardListView) this.findViewById(R.id.cardListView);
+        if (listView != null) {
+            listView.setAdapter(mCardArrayAdapter);
 
     }
 
 
 
-}
+}}

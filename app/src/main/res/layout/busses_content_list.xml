@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
+                xmlns:card="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/content_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -10,9 +11,12 @@
                 tools:context="com.erza.prizrencityguide.Busses.Busses"
                 tools:showIn="@layout/busses_activity">
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lvProduct"
-        android:layout_alignParentTop="true" />
+    <it.gmariotti.cardslib.library.view.CardListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card:list_card_layout_resourceID="@layout/list_card_thumbnail_layout"
+        style="@style/list_card.thumbnail"/>
+
 </RelativeLayout>
