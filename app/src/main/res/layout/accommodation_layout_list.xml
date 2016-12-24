@@ -56,7 +56,8 @@
         android:id="@+id/tvLokacioni"
         android:layout_weight="0.06"
         android:lineSpacingExtra="8sp"
-        android:textAlignment="textEnd"/>
+        android:textAlignment="textEnd"
+        android:textStyle="normal|italic"/>
 
     <TextView
         android:text="Description"
@@ -69,7 +70,7 @@
         android:breakStrategy="simple"
         android:lineSpacingExtra="8sp"
         android:linksClickable="true"
-        android:textAlignment="center"/>
+        android:textAlignment="viewStart"/>
 
     <Button
         android:text="Go to the website"
