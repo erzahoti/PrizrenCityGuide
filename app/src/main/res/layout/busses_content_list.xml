@@ -10,9 +10,14 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 tools:context="com.erza.prizrencityguide.Busses.Busses"
                 tools:showIn="@layout/busses_activity">
+    <ImageView
+        android:layout_marginTop="2dp"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <it.gmariotti.cardslib.library.view.CardListView
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageView"
         android:id="@+id/cardListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

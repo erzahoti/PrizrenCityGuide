@@ -16,6 +16,7 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
+import com.bumptech.glide.Glide;
 import com.erza.prizrencityguide.Busses.BussesDB;
 import com.erza.prizrencityguide.MapsActivity;
 import com.erza.prizrencityguide.R;
@@ -42,14 +43,18 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Busses.this, MapsActivity.class);
-                startActivity(i);
-            }
-        });
+        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
+        Glide.with(this).load(R.drawable.busses_map).into(imageView);
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Busses.this, MapsActivity.class);
+//                startActivity(i);
+//            }
+//        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Busses.this, this);
