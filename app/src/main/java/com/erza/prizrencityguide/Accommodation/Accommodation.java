@@ -94,16 +94,10 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
                 return "" + AccommodationDB.lokacioni;
             }
         });
-        /*dict.addStringField(R.id.tvCmimi, new StringExtractor<AccommodationDB>() {
+        dict.addStringField(R.id.tvCmimi, new StringExtractor<AccommodationDB>() {
             @Override
             public String getStringValue(AccommodationDB AccommodationDB, int i) {
                 return "" + AccommodationDB.cmimi;
-            }
-        });*/
-        dict.addStringField(R.id.tvLloji, new StringExtractor<AccommodationDB>() {
-            @Override
-            public String getStringValue(AccommodationDB AccommodationDB, int i) {
-                return "" + AccommodationDB.lloji;
             }
         });
 

@@ -14,6 +14,8 @@ public class AccommodationDB {
         public String emri;
         @SerializedName("lloji")
         public String lloji;
+        @SerializedName("cmimi")
+        public Double cmimi;
         @SerializedName("lokacioni")
         public String lokacioni;
         @SerializedName("koordinatat")
