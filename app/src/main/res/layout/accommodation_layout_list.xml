@@ -47,7 +47,8 @@
         android:id="@+id/tvCmimi"
         android:lineSpacingExtra="8sp"
         android:textStyle="italic"
-        android:textAlignment="textEnd"/>
+        android:textAlignment="textEnd"
+        android:contentDescription="Euro"/>
 
     <TextView
         android:text="Location"
@@ -55,8 +56,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvLokacioni"
         android:layout_weight="0.06"
-        android:lineSpacingExtra="8sp"
-        android:textAlignment="textEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textAlignment="viewEnd"
         android:textStyle="normal|italic"/>
 
     <TextView
@@ -65,12 +66,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvPershkrimi"
         android:layout_weight="0.11"
-        android:fontFamily="sans-serif"
         android:elegantTextHeight="false"
         android:breakStrategy="simple"
-        android:lineSpacingExtra="8sp"
         android:linksClickable="true"
-        android:textAlignment="viewStart"/>
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif"/>
 
     <Button
         android:text="Go to the website"
