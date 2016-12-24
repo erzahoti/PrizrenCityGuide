@@ -15,10 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.erza.prizrencityguide.FoodDrink.FoodDrink;
 import com.erza.prizrencityguide.Fragments.Accommodation;
 import com.erza.prizrencityguide.Fragments.Busses;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
-import com.erza.prizrencityguide.Fragments.FoodDrink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
 
@@ -131,8 +131,10 @@ public class MainActivity extends AppCompatActivity
 
             Toast.makeText(this, "Food and drink", Toast.LENGTH_SHORT).show();
             FoodDrink foodDrink = new FoodDrink();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content_frame, foodDrink, foodDrink.getTag()).commit();
+            /*FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.content_frame, foodDrink, foodDrink.getTag()).commit();*/
+            Intent intent = new Intent(MainActivity.this, FoodDrink.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_accommodation) {
             Toast.makeText(this, "Accommodation", Toast.LENGTH_SHORT).show();
