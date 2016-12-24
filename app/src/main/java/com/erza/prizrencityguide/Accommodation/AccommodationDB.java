@@ -20,7 +20,7 @@ public class AccommodationDB {
         public String koordinatat;
         @SerializedName("pershkrimi")
         public String pershkrimi;
-        @SerializedName("imazhi")
-        public String imazhi;
+        @SerializedName("imazhi_link")
+        public String imazhi_link;
     }
 
