@@ -20,7 +20,7 @@ import com.erza.prizrencityguide.Fragments.Busses;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Fragments.FoodDrink;
 import com.erza.prizrencityguide.Fragments.Home;
-import com.erza.prizrencityguide.Fragments.Monuments;
+import com.erza.prizrencityguide.Monuments.Monuments;
 
 
 public class MainActivity extends AppCompatActivity
@@ -115,11 +115,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_events) {
             return true;
         } else if (id == R.id.nav_monuments) {
-
-            Toast.makeText(this, "Monuments", Toast.LENGTH_SHORT).show();
-            Monuments monuments = new Monuments();
-            FragmentManager manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.content_frame, monuments, monuments.getTag()).commit();
+            Intent i = new Intent(MainActivity.this, Monuments.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_entertainment) {
             Toast.makeText(MainActivity.this, "Entertainment", Toast.LENGTH_SHORT).show();

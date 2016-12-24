@@ -11,7 +11,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="accommodation_string">Hello blank fragment of accommodation</string>
-    <string name="monuments_string">Hello blank fragment of monuments</string>
+    <string name="readmore_string">Read more of Monument in Progress..</string>
 
     <string name="home_string">Hello blank fragment of HOME</string>
 
@@ -24,4 +24,6 @@
 
     <string name="busses">Blank fragment for Busses (In progress...)</string>
     <string name="title_activity_entertainment1">Entertainment1</string>
+    <string name="title_activity_monuments">Monuments</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
