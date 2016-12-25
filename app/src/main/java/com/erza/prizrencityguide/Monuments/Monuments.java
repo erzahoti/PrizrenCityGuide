@@ -1,9 +1,11 @@
 package com.erza.prizrencityguide.Monuments;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -25,6 +27,7 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
     private ArrayList<monumentsdb> productList;
     private ListView monuments;
     private Button ReadMore_button;
+    private  int id_monument;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,12 +66,14 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
     public void processFinish(String s) {
         productList = new JsonConverter<monumentsdb>().toArrayList(s, monumentsdb.class);
         BindDictionary<monumentsdb> dict = new BindDictionary<monumentsdb>();
+
         dict.addStringField(R.id.emri_monument, new StringExtractor<monumentsdb>() {
             @Override
             public String getStringValue(monumentsdb monumentsdb, int i) {
                 return monumentsdb.emri;
             }
         });
+
 
         dict.addStringField(R.id.lokacioni_monument, new StringExtractor<monumentsdb>() {
             @Override
@@ -90,9 +95,12 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
                 });
 
 
+
         FunDapter<monumentsdb> adapter = new FunDapter<>(Monuments.this, productList, R.layout.monuments_layout_list,dict);
         monuments = (ListView)findViewById(R.id.Product_monuments);
         monuments.setAdapter(adapter);
 
     }
+
+
 }
