@@ -36,6 +36,13 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
         Glide.with(this).load(R.drawable.busses_map).into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Busses.this, BussesMap.class);
+                startActivity(i);
+            }
+        });
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
