@@ -19,27 +19,137 @@
         android:layout_height="250dp"
         android:layout_width="300dp"
         android:layout_gravity="center"/>
+    <FrameLayout
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"
-        android:lineSpacingExtra="10sp"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@+id/ivImazhi"
-        android:layout_toEndOf="@+id/ivImazhi"/>
+        android:paddingLeft="20dp">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvLloji"
-        android:layout_weight="0.06"
-        android:lineSpacingExtra="8sp"
-        android:textStyle="italic"/>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        app:srcCompat="@mipmap/ic_emri"
+                        android:id="@+id/imageView3"
+                        android:adjustViewBounds="false"
+                        android:layout_height="30dp"
+                        />
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Emri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvName"
+                        android:layout_weight="0.11"
+                        android:fontFamily="helvetica"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorPrimary"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:srcCompat="@mipmap/ic_emri"
+                        android:id="@+id/imageView4"/>
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Lloji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvLloji"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="italic"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:srcCompat="@mipmap/ic_lokacion"
+                        android:id="@+id/imageView7"/>
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Lokacioni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvLokacioni"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"/>
+                    <TextView
+                        android:text="Koordinatat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvKoordinatat"
+                        android:layout_weight="0.06"
+                        android:lineSpacingExtra="8sp" />
+
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
 
 
 
@@ -57,30 +167,8 @@
         android:lineSpacingExtra="8sp"
         android:linksClickable="true"
         android:textStyle="bold"/>
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvLokacioni"
-        android:layout_weight="0.06"
-        android:lineSpacingExtra="8sp" />
 
 
-       <TextView
-           android:text="Coordinates:"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_weight="0.06"
-           android:lineSpacingExtra="8sp"
-           android:textStyle="normal"
-           />
-       <TextView
-           android:text="TextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/tvKoordinatat"
-           android:layout_weight="0.06"
-           android:lineSpacingExtra="8sp" />
 
     <Button
         android:layout_height="wrap_content"
@@ -88,7 +176,7 @@
         android:text="Website"
         android:background="@android:color/holo_red_dark"
         android:textColor="@color/white"
-        android:layout_gravity="right"
+        android:layout_gravity="left"
 
         />
 
