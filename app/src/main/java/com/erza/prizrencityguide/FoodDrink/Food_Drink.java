@@ -14,7 +14,6 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
-import com.erza.prizrencityguide.FoodDrink.FoodDrinkDB;
 import com.erza.prizrencityguide.MapsActivity;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.android.json.JsonConverter;
@@ -28,13 +27,13 @@ import java.util.ArrayList;
  * Created by Donika on 12/24/2016.
  */
 
-public class FoodDrink extends AppCompatActivity implements AsyncResponse {
-    private ArrayList<FoodDrinkDB> productList;
+public class Food_Drink extends AppCompatActivity implements AsyncResponse {
+    private ArrayList<Food_Drink_DB> productList;
     private ListView lvProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fooddrink_activity);
+        setContentView(R.layout.food_drink_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,7 +41,7 @@ public class FoodDrink extends AppCompatActivity implements AsyncResponse {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(com.erza.prizrencityguide.FoodDrink.FoodDrink.this, MapsActivity.class);
+                Intent i = new Intent(Food_Drink.this, MapsActivity.class);
                 startActivity(i);
             }
         });
@@ -53,7 +52,7 @@ public class FoodDrink extends AppCompatActivity implements AsyncResponse {
 
 
 
-        PostResponseAsyncTask taskRead = new PostResponseAsyncTask(com.erza.prizrencityguide.FoodDrink.FoodDrink.this, this );
+        PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Food_Drink.this, this );
         taskRead.execute("http://www.regjisori.com/pcg/Food_drink/food_drink.php");
     }
     @Override
@@ -71,54 +70,54 @@ public class FoodDrink extends AppCompatActivity implements AsyncResponse {
 
     @Override
     public void processFinish(String s) {
-        productList = new JsonConverter<FoodDrinkDB>().toArrayList(s, FoodDrinkDB.class);
-        BindDictionary<FoodDrinkDB> dict = new BindDictionary<FoodDrinkDB>();
-        dict.addStringField(R.id.tvName, new StringExtractor<FoodDrinkDB>() {
+        productList = new JsonConverter<Food_Drink_DB>().toArrayList(s, Food_Drink_DB.class);
+        BindDictionary<Food_Drink_DB> dict = new BindDictionary<Food_Drink_DB>();
+        dict.addStringField(R.id.tvName, new StringExtractor<Food_Drink_DB>() {
             @Override
-            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return FoodDrinkDB.emri;
             }
         });
-        dict.addStringField(R.id.tvPershkrimi, new StringExtractor<FoodDrinkDB>() {
+        dict.addStringField(R.id.tvPershkrimi, new StringExtractor<Food_Drink_DB>() {
             @Override
-            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.pershkrimi;
             }
         });
-        dict.addStringField(R.id.tvLokacioni, new StringExtractor<FoodDrinkDB>() {
+        dict.addStringField(R.id.tvLokacioni, new StringExtractor<Food_Drink_DB>() {
             @Override
-            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.lokacioni;
             }
         });
-        dict.addStringField(R.id.tvLloji, new StringExtractor<FoodDrinkDB>() {
+        dict.addStringField(R.id.tvLloji, new StringExtractor<Food_Drink_DB>() {
             @Override
-            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.lloji;
             }
         });
-        dict.addStringField(R.id.tvKoordinatat, new StringExtractor<FoodDrinkDB>() {
+        dict.addStringField(R.id.tvKoordinatat, new StringExtractor<Food_Drink_DB>() {
             @Override
-            public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.koordinantat;
             }
         });
 
         dict.addDynamicImageField(R.id.ivImazhi,
-                new StringExtractor<FoodDrinkDB>() {
+                new StringExtractor<Food_Drink_DB>() {
                     @Override
-                    public String getStringValue(FoodDrinkDB FoodDrinkDB, int i) {
+                    public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                         return FoodDrinkDB.imazhi_link;
                     }
                 }, new DynamicImageLoader() {
                     @Override
                     public void loadImage(String link, ImageView imageView) {
-                        Picasso.with(com.erza.prizrencityguide.FoodDrink.FoodDrink.this).load(link).into(imageView);
+                        Picasso.with(Food_Drink.this).load(link).into(imageView);
                     }
                 });
 
 
-        FunDapter<FoodDrinkDB> adapter = new FunDapter<>(com.erza.prizrencityguide.FoodDrink.FoodDrink.this, productList, R.layout.fooddrink_layout_list,dict);
+        FunDapter<Food_Drink_DB> adapter = new FunDapter<>(Food_Drink.this, productList, R.layout.food_drink_layout_list,dict);
         lvProduct = (ListView)findViewById(R.id.lvProduct);
         lvProduct.setAdapter(adapter);
 

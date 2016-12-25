@@ -11,8 +11,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.erza.prizrencityguide.FoodDrink.FoodDrink"
-    tools:showIn="@layout/fooddrink_activity">
+    tools:context="com.erza.prizrencityguide.FoodDrink.Food_Drink"
+    tools:showIn="@layout/food_drink_activity">
 
 
     <FrameLayout

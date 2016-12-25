@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by Donika on 12/24/2016.
  */
 
-public class FoodDrinkDB {
+public class Food_Drink_DB {
 
 
     @SerializedName("id")

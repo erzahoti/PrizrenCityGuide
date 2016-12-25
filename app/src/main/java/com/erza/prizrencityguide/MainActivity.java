@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.erza.prizrencityguide.FoodDrink.FoodDrink;
+import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Fragments.Home;
@@ -129,11 +129,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_food_and_drink) {
 
-            Toast.makeText(this, "Food and drink", Toast.LENGTH_SHORT).show();
-            FoodDrink foodDrink = new FoodDrink();
+            Toast.makeText(this, "Places for food and drinks", Toast.LENGTH_SHORT).show();
+            Food_Drink foodDrink = new Food_Drink();
             /*FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.content_frame, foodDrink, foodDrink.getTag()).commit();*/
-            Intent intent = new Intent(MainActivity.this, FoodDrink.class);
+            Intent intent = new Intent(MainActivity.this, Food_Drink.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_accommodation) {

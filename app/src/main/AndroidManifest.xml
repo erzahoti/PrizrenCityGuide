@@ -38,7 +38,7 @@
             android:label="@string/title_activity_monuments"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".FoodDrink.FoodDrink"
+        <activity android:name=".FoodDrink.Food_Drink"
             android:label="Food and Drink"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Monuments.ReadMore">
