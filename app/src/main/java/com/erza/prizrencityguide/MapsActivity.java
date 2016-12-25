@@ -27,8 +27,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng prizren = new LatLng(42.21, 20.733);
-        mMap.addMarker(new MarkerOptions().position(prizren).title("Prizren"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(prizren));
+        LatLng prizren = new LatLng(42.214896, 20.738030);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(prizren,14));
     }
 }
