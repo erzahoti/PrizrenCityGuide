@@ -21,8 +21,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!--Ketu thirret lista per elementet qe do te vendosen brenda permbajtjes se aktivitetit Busses-->
     <include layout="@layout/busses_content_list"
              android:id="@+id/include"/>
+
+    <!--Per cdo rast qe te rishfrytezohet eshte lene ketu-->
 
     <!--<android.support.design.widget.FloatingActionButton-->
         <!--android:id="@+id/fab"-->

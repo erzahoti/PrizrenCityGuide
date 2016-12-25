@@ -18,10 +18,15 @@ public class Routes extends AppCompatActivity {
         setContentView(R.layout.busses_routes);
         Intent intent = getIntent();
         String routestr = intent.getStringExtra("route");
+
+        // Ketu do te vendosen te dhenat mbi linjat...
+
+
+        // Ketu eshte marre "extra" e derguar nga intenta nga Busses
         TextView route = (TextView) findViewById(R.id.route_id);
         route.setText(routestr);
 
-
+        // Vendoset ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }

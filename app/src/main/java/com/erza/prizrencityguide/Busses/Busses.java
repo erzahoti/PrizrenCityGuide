@@ -26,18 +26,27 @@ import it.gmariotti.cardslib.library.prototypes.CardSection;
 import it.gmariotti.cardslib.library.view.CardListView;
 
 public class Busses extends AppCompatActivity implements AsyncResponse {
+
     private ArrayList<BussesDB> productList;
-    private ListView lvProduct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.busses_activity);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Krijimi i nje objekti te imazhit
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
+        // Vendosja e imazhit ne Glide
+        // Glide eshte librari per shfaqjen e imazheve me disa mundesi te ndryshme
         Glide.with(this).load(R.drawable.busses_map).into(imageView);
+
+        // Nese shtypet imazhi do te krijohet inenta e cila i dergon shfrytezuesit
+        // ne nje aktivitet tjeter
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +54,9 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
                 startActivity(i);
             }
         });
+
+
+//        Ky kod eshte lene per cdo rast te riperdoret me vone
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -54,13 +66,17 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
 //                startActivity(i);
 //            }
 //        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // Ketu behet lidhja e mundshme me hostin per t'i marre te dhenat nga PHP skedari
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Busses.this, this);
         taskRead.execute("http://www.regjisori.com/pcg/Busses/busses.php");
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //Butoni per dergimin mbrapa
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -75,28 +91,49 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
 
     @Override
     public void processFinish(String s) {
+
+        // Te dhenat merren nga JSON-i dhe vendosen ne nje liste
         productList = new JsonConverter<BussesDB>().toArrayList(s, BussesDB.class);
 
+        // Imazhet te cilat mund te vendosen ne karta
         int listImages[] = new int[]{R.drawable.bus_icon};
-        ArrayList<Card> cards = new ArrayList<Card>();
-        for (int i = 0; i<productList.size(); i++) {
-            // Create a Card
-            Card card = new Card(this);
-            // Create a CardHeader
-            CardHeader header = new CardHeader(this);
-            // Add Header to card
-            header.setTitle(productList.get(i).linja);
 
-            card.setTitle("\nRoute "+(i+1)+ "\nBus Fare: 0.50 €");
+        // Krijimi i nje liste te kartes
+        ArrayList<Card> cards = new ArrayList<Card>();
+
+        // Per cdo element ne listen e produkteve krijohet nje karte
+        for (int i = 0; i<productList.size(); i++) {
+
+            // Krijimi i kartes
+            Card card = new Card(this);
+
+            // Krijimi i nje titulli per karte
+            CardHeader header = new CardHeader(this);
+            header.setTitle(productList.get(i).linja);
             card.addCardHeader(header);
+
+            // Shtimi i nje permbajtjes ne karte
+            String content = "\nRoute "+(i+1)+ "\nBus Fare: 0.50 €";
+            card.setTitle(content);
+
+            // Krijimi i nje thumbnail-i per karte
             CardThumbnail thumb = new CardThumbnail(this);
             thumb.setDrawableResource(listImages[0]);
             card.addCardThumbnail(thumb);
+
+            // Vendosja e kartes ne vargun e kartave
             cards.add(card);
+
+            // Mundesia e kartes per t'u klikuar
             card.setClickable(true);
+
+            /* Vendosja e nje listener-i qe kur te shtypet karta t'i dergoje shfrytezuesit
+                ne nje aktivitet tjeter */
             card.setOnClickListener(new Card.OnCardClickListener() {
                 @Override
                 public void onClick(Card card, View view) {
+
+                    // Krijimi i intentes per ta derguar shfryetzuesin ne aktivitetin Routes
                     Intent intent = new Intent(Busses.this,Routes.class);
                     intent.putExtra("route", card.getTitle());
                     startActivity(intent);
@@ -105,9 +142,16 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
 
         }
 
+        // Ketu permblidhen kartat dhe vendosen ne nje varg te adapaterit
         CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards);
+
+        //Krijohet nje CardListView e cila do t'i permbaje keto karta
         CardListView listView = (CardListView) this.findViewById(R.id.cardListView);
+
+        //nese vargu nuk eshte i zbrazet keto vendosen ne View
         if (listView != null) {
+
+            // Vendosen te dhenat ne adapater
             listView.setAdapter(mCardArrayAdapter);
 
     }

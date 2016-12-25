@@ -18,6 +18,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -25,10 +26,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
 
+        // Merret qyteti i Prizrenit me koordinatat e saj
         LatLng prizren = new LatLng(42.214896, 20.738030);
+
+        // Ketu vendoset mundesia per zmadhim e zvogelim
         mMap.getUiSettings().setZoomControlsEnabled(true);
+
+        // Ketu behet zmadhimi ne lokacionin e deshiruar
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(prizren,14));
     }
 }

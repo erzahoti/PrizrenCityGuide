@@ -27,8 +27,10 @@ public class BussesMap extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        // Ketu do te vendosen me vone edhe lokacionet e linjave
         LatLng prizren = new LatLng(42.214896, 20.738030);
 
+        // Ketu eshte bere zmadhimi ne harte tek lokacioni i kerkuar
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(prizren,14));
     }
 }
