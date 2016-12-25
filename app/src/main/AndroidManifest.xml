@@ -51,7 +51,11 @@
             android:name=".Busses.Busses"
             android:label="@string/title_activity_busses"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
+        <activity android:name=".Busses.Routes">
+        </activity>
+
     </application>
 
 </manifest>
