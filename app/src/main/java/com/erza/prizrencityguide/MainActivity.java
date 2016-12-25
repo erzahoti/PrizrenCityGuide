@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_events) {
             return true;
         } else if (id == R.id.nav_monuments) {
+            Toast.makeText(MainActivity.this, "Monuments", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Monuments.class);
             startActivity(i);
 
