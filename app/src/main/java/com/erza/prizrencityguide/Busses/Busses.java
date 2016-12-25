@@ -21,6 +21,8 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.internal.CardThumbnail;
+import it.gmariotti.cardslib.library.internal.ViewToClickToExpand;
+import it.gmariotti.cardslib.library.prototypes.CardSection;
 import it.gmariotti.cardslib.library.view.CardListView;
 
 public class Busses extends AppCompatActivity implements AsyncResponse {
@@ -83,9 +85,9 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
             // Create a CardHeader
             CardHeader header = new CardHeader(this);
             // Add Header to card
-            header.setTitle("Route "+(i+1));
+            header.setTitle(productList.get(i).linja);
 
-            card.setTitle(productList.get(i).linja);
+            card.setTitle("\nRoute "+(i+1)+ "\nBus Fare: 0.50 €");
             card.addCardHeader(header);
             CardThumbnail thumb = new CardThumbnail(this);
             thumb.setDrawableResource(listImages[0]);

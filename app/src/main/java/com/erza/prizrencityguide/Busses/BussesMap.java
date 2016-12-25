@@ -28,6 +28,7 @@ public class BussesMap extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         LatLng prizren = new LatLng(42.214896, 20.738030);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(prizren,14));
     }
 }
