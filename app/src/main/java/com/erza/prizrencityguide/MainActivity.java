@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity
         Home home = new Home();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
-
     }
 
 

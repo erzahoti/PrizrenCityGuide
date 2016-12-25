@@ -16,8 +16,14 @@ public class entertainmentDB {
     public String website;
     @SerializedName("lloji")
     public String lloji;
-    @SerializedName("pershkrimi")
-    public String pershkrimi;
+    @SerializedName("lokacioni")
+    public String lokacioni;
+    @SerializedName("koordinantat")
+    public String koordinantat;
     @SerializedName("imazhi_link")
     public String imazhi_link;
+    @SerializedName("pershkrimi")
+    public String pershkrimi;
+
+
 }
