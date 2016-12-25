@@ -24,8 +24,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class Entertainment extends AppCompatActivity implements AsyncResponse {
-    private ArrayList<entertainmentDB> productList;
-    private ListView lvProduct;
+    private ArrayList<entertainmentDB> entertainmentList;
+    private ListView lvEntertainment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +43,6 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
-
-
-
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Entertainment.this, this );
         taskRead.execute("http://www.regjisori.com/pcg/Entertainment/Entertainment.php");
     }
@@ -64,29 +59,36 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
         }
     }
 
+
     @Override
     public void processFinish(String s) {
-        productList = new JsonConverter<entertainmentDB>().toArrayList(s, entertainmentDB.class);
+        entertainmentList = new JsonConverter<entertainmentDB>().toArrayList(s, entertainmentDB.class);
         BindDictionary<entertainmentDB> dict = new BindDictionary<entertainmentDB>();
-        dict.addStringField(R.id.tvName, new StringExtractor<entertainmentDB>() {
+        dict.addStringField(R.id.tvEmriEntertainment, new StringExtractor<entertainmentDB>() {
             @Override
             public String getStringValue(entertainmentDB entertainmentDB, int i) {
                 return entertainmentDB.emri;
             }
         });
-        dict.addStringField(R.id.tvPershkrimi, new StringExtractor<entertainmentDB>() {
+        dict.addStringField(R.id.tvLlojiEntertainment, new StringExtractor<entertainmentDB>() {
+            @Override
+            public String getStringValue(entertainmentDB entertainmentDB, int i) {
+                return "" + entertainmentDB.lloji;
+            }
+        });
+        dict.addStringField(R.id.tvLokacioniEntertainment, new StringExtractor<entertainmentDB>() {
+            @Override
+            public String getStringValue(entertainmentDB entertainmentDB, int i) {
+                return "" + entertainmentDB.lokacioni;
+            }
+        });
+        dict.addStringField(R.id.tvPershkrimiEntertainment, new StringExtractor<entertainmentDB>() {
             @Override
             public String getStringValue(entertainmentDB entertainmentDB, int i) {
                 return "" + entertainmentDB.pershkrimi;
             }
         });
-        dict.addStringField(R.id.tvWebsite, new StringExtractor<entertainmentDB>() {
-            @Override
-            public String getStringValue(entertainmentDB entertainmentDB, int i) {
-                return "" + entertainmentDB.website;
-            }
-        });
-        dict.addDynamicImageField(R.id.ivImazhi,
+        dict.addDynamicImageField(R.id.ivImazhiEntertainment,
                 new StringExtractor<entertainmentDB>() {
             @Override
             public String getStringValue(entertainmentDB entertainmentDB, int i) {
@@ -100,9 +102,9 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
         });
 
 
-        FunDapter<entertainmentDB> adapter = new FunDapter<>(Entertainment.this, productList, R.layout.entertainment_layout_list,dict);
-        lvProduct = (ListView)findViewById(R.id.lvProduct);
-        lvProduct.setAdapter(adapter);
+        FunDapter<entertainmentDB> adapter = new FunDapter<>(Entertainment.this, entertainmentList, R.layout.entertainment_layout_list,dict);
+        lvEntertainment = (ListView)findViewById(R.id.lvEntertainment);
+        lvEntertainment.setAdapter(adapter);
 
     }
 
