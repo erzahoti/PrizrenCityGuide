@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_collapseParallaxMultiplier="1.0"
     android:weightSum="1"
     android:baselineAligned="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
 
     <ImageView
         app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed"
@@ -19,13 +19,16 @@
         android:layout_height="250dp"
         android:layout_width="300dp"
         android:layout_gravity="center"/>
+
+
     <FrameLayout
 
         android:background="@drawable/corner"
         android:layout_centerInParent="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp">
+        android:paddingLeft="20dp"
+        android:backgroundTint="@android:color/transparent">
 
 
         <LinearLayout
@@ -46,10 +49,10 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        app:srcCompat="@mipmap/ic_emri"
+                        app:srcCompat="@mipmap/line"
                         android:id="@+id/imageView3"
                         android:adjustViewBounds="false"
-                        android:layout_height="30dp"
+                        android:layout_height="20dp"
                         />
 
                     <TextView
@@ -79,8 +82,8 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        app:srcCompat="@mipmap/ic_emri"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/line"
                         android:id="@+id/imageView4"/>
 
                     <TextView
@@ -107,10 +110,11 @@
                     android:layout_height="match_parent"
                     android:paddingTop="7dp">
 
+
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        app:srcCompat="@mipmap/ic_lokacion"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/location"
                         android:id="@+id/imageView7"/>
 
                     <TextView
@@ -128,15 +132,104 @@
                         android:linksClickable="true"
                         android:paddingBottom="10dp"
                         android:paddingTop="6dp"/>
+
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/map"
+                        android:id="@+id/imageView8"/>
                     <TextView
                         android:text="Koordinatat"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tvKoordinatat"
-                        android:layout_weight="0.06"
-                        android:lineSpacingExtra="8sp" />
+                        android:layout_weight="0.11"
+                        android:lineSpacingExtra="12sp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:fontFamily="Helvetica"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"/>
 
 
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <FrameLayout
+
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:padding="20dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Pershkrimi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvPershkrimi"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorPrimary"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <Button
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Website"
+                    android:background="@android:color/holo_red_dark"
+                    android:textColor="@color/white"
+                    android:layout_gravity="left"
+                    />
 
                 </TableRow>
 
@@ -148,41 +241,4 @@
 
 
 
-
-
-
-
-
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvPershkrimi"
-        android:layout_weight="0.11"
-        android:padding="10dp"
-        android:fontFamily="sans-serif"
-        android:elegantTextHeight="false"
-        android:breakStrategy="simple"
-        android:lineSpacingExtra="8sp"
-        android:linksClickable="true"
-        android:textStyle="bold"/>
-
-
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Website"
-        android:background="@android:color/holo_red_dark"
-        android:textColor="@color/white"
-        android:layout_gravity="left"
-
-        />
-
-
-
-
-
 </LinearLayout>
-
