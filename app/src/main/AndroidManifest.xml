@@ -41,7 +41,8 @@
         <activity android:name=".FoodDrink.Food_Drink"
             android:label="Food and Drink"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Monuments.ReadMore">
+        <activity android:name=".Monuments.ReadMore"
+                  android:label="Read More">
         </activity>
 
         <activity android:name=".Accommodation.Accommodation"
