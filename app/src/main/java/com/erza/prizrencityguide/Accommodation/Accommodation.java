@@ -27,9 +27,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by Donika on 12/24/2016.
- */
 
 public class Accommodation extends AppCompatActivity implements AsyncResponse {
     private ArrayList<AccommodationDB> productList;
