@@ -21,6 +21,9 @@ public class Food_Drink_DB {
     public String koordinantat;
     @SerializedName("pershkrimi")
     public String pershkrimi;
+    @SerializedName("website")
+    public String website;
     @SerializedName("imazhi_link")
     public String imazhi_link;
+
 }

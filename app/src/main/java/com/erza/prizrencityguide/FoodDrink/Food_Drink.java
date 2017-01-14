@@ -16,7 +16,11 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
+import com.amigold.fundapter.interfaces.ItemClickListener;
 import com.erza.prizrencityguide.MapsActivity;
+import com.erza.prizrencityguide.Monuments.Monuments;
+import com.erza.prizrencityguide.Monuments.ReadMore;
+import com.erza.prizrencityguide.Monuments.monumentsdb;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.android.json.JsonConverter;
 import com.kosalgeek.genasync12.AsyncResponse;
@@ -100,13 +104,28 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
                 return "" + FoodDrinkDB.lloji;
             }
         });
+        dict.addStringField(R.id.button_id, new StringExtractor<Food_Drink_DB>() {
+            @Override
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
+                return "";
+            }
+        }).onClick(new ItemClickListener<Food_Drink_DB>() {
+
+            @Override
+            public void onClick(Food_Drink_DB food_drink_sdb, int position, View view) {
+                String url =food_drink_sdb.website;
+                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(in);
+
+            }
+        });;
+
         dict.addStringField(R.id.tvKoordinatat, new StringExtractor<Food_Drink_DB>() {
             @Override
             public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.koordinantat;
             }
         });
-
         dict.addDynamicImageField(R.id.ivImazhi,
                 new StringExtractor<Food_Drink_DB>() {
                     @Override
@@ -129,9 +148,8 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
 
     public void sendToWeb(View view){
 
-        String url="https://www.google.com/";
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(i);
+
+
     }
 
 
