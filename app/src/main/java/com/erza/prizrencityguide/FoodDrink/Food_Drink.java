@@ -1,12 +1,14 @@
 package com.erza.prizrencityguide.FoodDrink;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -30,6 +32,7 @@ import java.util.ArrayList;
 public class Food_Drink extends AppCompatActivity implements AsyncResponse {
     private ArrayList<Food_Drink_DB> productList;
     private ListView lvProduct;
+    public Button Button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,7 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Button = (Button) findViewById(R.id.button_id);
 
 
 
@@ -117,12 +121,18 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
                 });
 
 
-        FunDapter<Food_Drink_DB> adapter = new FunDapter<>(Food_Drink.this, productList, R.layout.food_drink_layout_list,dict);
+        FunDapter<Food_Drink_DB> adapter = new FunDapter<>(com.erza.prizrencityguide.FoodDrink.Food_Drink.this, productList, R.layout.food_drink_layout_list,dict);
         lvProduct = (ListView)findViewById(R.id.lvProduct);
         lvProduct.setAdapter(adapter);
 
     }
 
+    public void sendToWeb(View view){
+
+        String url="https://www.google.com/";
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(i);
+    }
 
 
 }

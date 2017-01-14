@@ -13,7 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
@@ -24,13 +26,25 @@ import com.erza.prizrencityguide.Busses.Busses;
 
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
+
+    ViewFlipper viewFlipper;
+    ImageButton next;
+    ImageButton previous;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
+        next=(ImageButton) findViewById(R.id.next);
+        previous=(ImageButton) findViewById(R.id.prev);
+
+        next.setOnClickListener(this);
+        previous.setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -167,5 +181,13 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onClick(View view) {
 
-}
+        if (view == next) {
+            viewFlipper.showNext();
+        } else if (view == previous) {
+            viewFlipper.showPrevious();
+
+        }
+    }}
