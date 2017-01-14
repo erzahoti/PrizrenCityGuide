@@ -5,12 +5,15 @@ package com.erza.prizrencityguide.Accommodation;
  */
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -31,6 +34,9 @@ import java.util.ArrayList;
 public class Accommodation extends AppCompatActivity implements AsyncResponse {
     private ArrayList<AccommodationDB> productList;
     private ListView lvProduct;
+    public Button webButton;
+
+    static final String TAG = "Accommodation";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +53,6 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
-
-
 
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(com.erza.prizrencityguide.Accommodation.Accommodation.this, this);
         taskRead.execute("http://www.regjisori.com/pcg/Accommodation/accommodation.php");
@@ -71,8 +72,10 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
 
     @Override
     public void processFinish(String s) {
+
         productList = new JsonConverter<AccommodationDB>().toArrayList(s, AccommodationDB.class);
-        BindDictionary<AccommodationDB> dict = new BindDictionary<AccommodationDB>();
+        final BindDictionary<AccommodationDB> dict = new BindDictionary<AccommodationDB>();
+
         dict.addStringField(R.id.tvName, new StringExtractor<AccommodationDB>() {
             @Override
             public String getStringValue(AccommodationDB AccommodationDB, int i) {
@@ -116,8 +119,16 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
         lvProduct = (ListView)findViewById(R.id.lvProduct);
         lvProduct.setAdapter(adapter);
 
+        //webButton = (Button) findViewById(R.id.accommodation_website_button);
+        Log.d(TAG,"webButton 0 " + webButton);
     }
 
-
+    public void sendToWebsite(View view) {
+        Log.d(TAG,"sendToWebsite");
+        String url = "https://www.google.com/";
+        Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+        //i.setData(Uri.parse(url));
+        startActivity(i);
+    }
 
 }
