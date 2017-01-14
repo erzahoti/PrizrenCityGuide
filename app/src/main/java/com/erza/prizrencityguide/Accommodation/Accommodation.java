@@ -21,6 +21,7 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
+import com.amigold.fundapter.interfaces.ItemClickListener;
 import com.erza.prizrencityguide.MapsActivity;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.android.json.JsonConverter;
@@ -101,6 +102,20 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
             }
         });
 
+        dict.addStringField(R.id.accommodation_website_button, new StringExtractor<AccommodationDB>(){
+            @Override
+            public String getStringValue(AccommodationDB item, int position) {
+                return null;
+            }
+        }).onClick(new ItemClickListener<AccommodationDB>() {
+            @Override
+            public void onClick(AccommodationDB accommodationDB, int position, View view) {
+                String url = accommodationDB.website;
+                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(in);
+            }
+        });
+
         dict.addDynamicImageField(R.id.ivImazhi,
                 new StringExtractor<AccommodationDB>() {
                     @Override
@@ -125,10 +140,12 @@ public class Accommodation extends AppCompatActivity implements AsyncResponse {
 
     public void sendToWebsite(View view) {
         Log.d(TAG,"sendToWebsite");
-        String url = "https://www.google.com/";
-        Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+        String url = "www.google.com";
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         //i.setData(Uri.parse(url));
         startActivity(i);
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.erza.prizrencityguide;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity
     ViewFlipper viewFlipper;
     ImageButton next;
     ImageButton previous;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity
         Home home = new Home();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
+
     }
 
 
@@ -99,14 +100,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, PreferencesActivity.class);
+            startActivity(intent);
             return true;
         }
-
-        //if (id == R.id.nav_events) {
-            //Intent intent = new Intent(this, EventsActivity.class);
-            //startActivity(intent);
-            //return true;
-        //}
 
         return super.onOptionsItemSelected(item);
     }
@@ -162,8 +159,8 @@ public class MainActivity extends AppCompatActivity
 
             Toast.makeText(this, "Busses", Toast.LENGTH_SHORT).show();
             Busses busses = new Busses();
-//            FragmentManager manager = getSupportFragmentManager();
-//            manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+            //FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
             Intent i = new Intent(MainActivity.this, Busses.class);
             startActivity(i);
 

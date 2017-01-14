@@ -59,8 +59,11 @@
         </activity>
         <activity android:name=".Busses.BussesMap">
         </activity>
-        <activity android:name=".ContactUs"
-                  android:label="Contact Us">
+        <activity
+            android:name=".ContactUs"
+            android:label="Contact Us">
+        </activity>
+        <activity android:name=".PreferencesActivity">
         </activity>
     </application>
 
