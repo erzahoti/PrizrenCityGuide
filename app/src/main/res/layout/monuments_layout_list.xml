@@ -15,10 +15,10 @@
 <ImageView
     app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed"
     android:id="@+id/imazhi_monument"
-    android:layout_height="300dp"
-    android:layout_width="350dp"/>
+    android:layout_width="300dp"
+    android:layout_height="300dp"/>
 
-<FrameLayout
+    <FrameLayout
 
     android:background="@drawable/corner"
     android:layout_centerInParent="true"

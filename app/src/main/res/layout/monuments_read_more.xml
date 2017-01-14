@@ -1,19 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_read_more"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.erza.prizrencityguide.Monuments.ReadMore">
 
-    <TextView
-        android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:layout_collapseParallaxMultiplier="1.0"
+              android:weightSum="1"
+              android:baselineAligned="false"
+              android:orientation="vertical"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp">
+
+    <ImageView
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed"
+        android:id="@+id/imazhi_monument_rm"
+        android:layout_height="300dp"
+        android:layout_width="350dp"/>
+
+    <FrameLayout
+
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/readmore_string"/>
+        android:paddingLeft="20dp">
 
-</RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        app:srcCompat="@mipmap/ic_emri"
+                        android:id="@+id/imageView3"
+                        android:adjustViewBounds="false"
+                        android:layout_height="30dp"
+                        />
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/emri_monument_rm"
+                        android:lineSpacingExtra="8sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:srcCompat="@mipmap/ic_lokacion"
+                        android:id="@+id/imageView7"/>
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lokacioni_monument_rm"
+                        android:layout_weight="0.06"
+                        android:lineSpacingExtra="8sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="35dp"
+                    android:layout_marginEnd="30dp">
+
+                    <TextView
+                        android:id="@+id/description_of_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description: "
+                        android:fontFamily="sans-serif"/>
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="35dp"
+                    android:layout_marginEnd="30dp">
+
+
+                </TableRow>
+
+                <TableRow>
+
+
+                    <TextView
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/decription_of_monument"
+                         />
+                </TableRow>
+
+
+
+
+
+
+            </TableLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
+
+
+

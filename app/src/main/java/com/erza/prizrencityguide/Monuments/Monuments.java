@@ -28,21 +28,13 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
 
     private ArrayList<monumentsdb> productList;
     private ListView monuments;
-    private Button ReadMore_button;
-    private  int id_monument;
+
+    public static final String GET_ID = "item_id";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.monuments_activity);
-
-        /**ReadMore_button = (Button) findViewById(R.id.readmore_button);
-        ReadMore_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Monuments.this,ReadMore.class);
-                startActivity(intent);
-            }
-        });**/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
