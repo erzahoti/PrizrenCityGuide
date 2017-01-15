@@ -1,7 +1,10 @@
 package com.erza.prizrencityguide;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
@@ -22,15 +27,29 @@ import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
 import com.erza.prizrencityguide.Busses.Busses;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
+
+    ViewFlipper viewFlipper;
+    ImageButton next;
+    ImageButton previous;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
+        next=(ImageButton) findViewById(R.id.next);
+        previous=(ImageButton) findViewById(R.id.prev);
+
+        next.setOnClickListener(this);
+        previous.setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -56,6 +75,7 @@ public class MainActivity extends AppCompatActivity
         Home home = new Home();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
+
     }
 
 
@@ -85,14 +105,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, PreferencesActivity.class);
+            startActivity(intent);
             return true;
         }
-
-        //if (id == R.id.nav_events) {
-            //Intent intent = new Intent(this, EventsActivity.class);
-            //startActivity(intent);
-            //return true;
-        //}
 
         return super.onOptionsItemSelected(item);
     }
@@ -148,8 +164,8 @@ public class MainActivity extends AppCompatActivity
 
             Toast.makeText(this, "Busses", Toast.LENGTH_SHORT).show();
             Busses busses = new Busses();
-//            FragmentManager manager = getSupportFragmentManager();
-//            manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+            //FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
             Intent i = new Intent(MainActivity.this, Busses.class);
             startActivity(i);
 
@@ -167,5 +183,13 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onClick(View view) {
 
-}
+        if (view == next) {
+            viewFlipper.showNext();
+        } else if (view == previous) {
+            viewFlipper.showPrevious();
+
+        }
+    }}

@@ -1,12 +1,14 @@
 package com.erza.prizrencityguide.FoodDrink;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -14,7 +16,11 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
+import com.amigold.fundapter.interfaces.ItemClickListener;
 import com.erza.prizrencityguide.MapsActivity;
+import com.erza.prizrencityguide.Monuments.Monuments;
+import com.erza.prizrencityguide.Monuments.ReadMore;
+import com.erza.prizrencityguide.Monuments.monumentsdb;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.android.json.JsonConverter;
 import com.kosalgeek.genasync12.AsyncResponse;
@@ -30,6 +36,7 @@ import java.util.ArrayList;
 public class Food_Drink extends AppCompatActivity implements AsyncResponse {
     private ArrayList<Food_Drink_DB> productList;
     private ListView lvProduct;
+    public Button Button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +54,7 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Button = (Button) findViewById(R.id.button_id);
 
 
 
@@ -96,13 +104,28 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
                 return "" + FoodDrinkDB.lloji;
             }
         });
+        dict.addStringField(R.id.button_id, new StringExtractor<Food_Drink_DB>() {
+            @Override
+            public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
+                return "";
+            }
+        }).onClick(new ItemClickListener<Food_Drink_DB>() {
+
+            @Override
+            public void onClick(Food_Drink_DB food_drink_sdb, int position, View view) {
+                String url =food_drink_sdb.website;
+                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(in);
+
+            }
+        });;
+
         dict.addStringField(R.id.tvKoordinatat, new StringExtractor<Food_Drink_DB>() {
             @Override
             public String getStringValue(Food_Drink_DB FoodDrinkDB, int i) {
                 return "" + FoodDrinkDB.koordinantat;
             }
         });
-
         dict.addDynamicImageField(R.id.ivImazhi,
                 new StringExtractor<Food_Drink_DB>() {
                     @Override
@@ -117,12 +140,17 @@ public class Food_Drink extends AppCompatActivity implements AsyncResponse {
                 });
 
 
-        FunDapter<Food_Drink_DB> adapter = new FunDapter<>(Food_Drink.this, productList, R.layout.food_drink_layout_list,dict);
+        FunDapter<Food_Drink_DB> adapter = new FunDapter<>(com.erza.prizrencityguide.FoodDrink.Food_Drink.this, productList, R.layout.food_drink_layout_list,dict);
         lvProduct = (ListView)findViewById(R.id.lvProduct);
         lvProduct.setAdapter(adapter);
 
     }
 
+    public void sendToWeb(View view){
+
+
+
+    }
 
 
 }
