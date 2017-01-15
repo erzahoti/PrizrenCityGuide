@@ -1,8 +1,10 @@
 package com.erza.prizrencityguide;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +27,8 @@ import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
 import com.erza.prizrencityguide.Busses.Busses;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -35,9 +39,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
         next=(ImageButton) findViewById(R.id.next);

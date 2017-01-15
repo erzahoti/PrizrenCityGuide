@@ -1,40 +1,11 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pref_notification">
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
+        android:defaultValue="Prizren Tourist "
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="Username"
-        android:key="edit_text_username"
-        android:summary="Set Your Username Here"
-        android:defaultValue="Prizren Tourist"/>
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="notifications_new_message"
-        android:title="@string/pref_title_new_message_notifications"/>
-
-
-    <RingtonePreference
-        android:defaultValue="content://settings/system/notification_sound"
-        android:dependency="notifications_new_message"
-        android:key="notifications_new_message_ringtone"
-        android:ringtoneType="notification"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/pref_title_ringtone"/>
-
-    <SwitchPreference
-        android:defaultValue="true"
-        android:dependency="notifications_new_message"
-        android:key="notifications_new_message_vibrate"
-        android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/pref_title_vibrate"/>
-
-    <ListPreference
-        android:defaultValue="#111111"
-        android:entries="@array/colorName"
-        android:entryValues="@array/colorCode"
-        android:key="background_color"
-        android:summary="Set background color of app"
-        android:title="Colors" />
-
+        android:title="Your Username"
+        android:key="editText_username"
+        android:summary="Set your Username here"/>
 </PreferenceScreen>
