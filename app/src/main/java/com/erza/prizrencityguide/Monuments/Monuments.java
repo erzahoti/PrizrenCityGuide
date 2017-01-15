@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
@@ -28,7 +29,6 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
 
     private ArrayList<monumentsdb> productList;
     private ListView monuments;
-
     public static final String GET_ID = "item_id";
 
     @Override
@@ -59,6 +59,8 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
     @Override
     public void processFinish(String s) {
         productList = new JsonConverter<monumentsdb>().toArrayList(s, monumentsdb.class);
+
+       // Toast.makeText(Monuments.this, productList.get(0)., Toast.LENGTH_SHORT).show();
         BindDictionary<monumentsdb> dict = new BindDictionary<monumentsdb>();
 
         dict.addStringField(R.id.emri_monument, new StringExtractor<monumentsdb>() {
@@ -75,6 +77,7 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
                 return "Name of street: " + monumentsdb.lokacioni;
             }
         });
+
         dict.addDynamicImageField(R.id.imazhi_monument,
                 new StringExtractor<monumentsdb>() {
                     @Override
@@ -99,7 +102,24 @@ public class Monuments extends AppCompatActivity implements AsyncResponse {
 
             @Override
             public void onClick(monumentsdb monumentsdb, int position, View view) {
+
                 Intent i = new Intent(Monuments.this,ReadMore.class);
+                String  rez="";
+               int pos = position;
+                ArrayList<String> listdata = new ArrayList<String>();
+                rez =rez+ monumentsdb.id;
+                //int len = productList.size();
+               // int pos1 = len -position+4;
+                if (productList != null) {
+
+                            listdata.add(productList.get(pos).emri);
+                            listdata.add(productList.get(pos).lokacioni);
+                            listdata.add(productList.get(pos).imazhi_link);
+                            listdata.add(productList.get(pos).pershkrimi);
+
+
+                }
+                i.putExtra("lista",listdata);
                 startActivity(i);
             }
         });

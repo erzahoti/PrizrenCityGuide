@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +20,8 @@
         app:srcCompat="@drawable/common_google_signin_btn_icon_dark_pressed"
         android:id="@+id/imazhi_monument_rm"
         android:layout_height="300dp"
-        android:layout_width="350dp"/>
+        android:layout_width="350dp"
+        android:layout_gravity="center"/>
 
     <FrameLayout
 
@@ -80,62 +85,82 @@
 
                 </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="7dp"
-                    android:paddingLeft="35dp"
-                    android:layout_marginEnd="30dp">
-
-                    <TextView
-                        android:id="@+id/description_of_m"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Description: "
-                        android:fontFamily="sans-serif"/>
-
-                </TableRow>
-
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="7dp"
-                    android:paddingLeft="35dp"
-                    android:layout_marginEnd="30dp">
-
-
-                </TableRow>
-
-                <TableRow>
-
-
-                    <TextView
-                        android:text="TextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/decription_of_monument"
-                         />
-                </TableRow>
-
-
-
-
-
-
             </TableLayout>
 
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:text="DESCRIPTION"
+
+        android:id="@+id/textVied"
+        android:lineSpacingExtra="8sp"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:typeface="normal"
+        android:textAlignment="viewStart"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp">
 
 
+        <LinearLayout
 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp">
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp">
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Pershkrimi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/description_monument"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"/>
+
+                </TableRow>
+
+            </TableLayout>
 
         </LinearLayout>
 
     </FrameLayout>
 
 </LinearLayout>
+    </ScrollView>
 
 
 
