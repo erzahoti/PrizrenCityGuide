@@ -1,12 +1,14 @@
 package com.erza.prizrencityguide.Entertainment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -14,6 +16,7 @@ import com.amigold.fundapter.BindDictionary;
 import com.amigold.fundapter.FunDapter;
 import com.amigold.fundapter.extractors.StringExtractor;
 import com.amigold.fundapter.interfaces.DynamicImageLoader;
+import com.amigold.fundapter.interfaces.ItemClickListener;
 import com.erza.prizrencityguide.MapsActivity;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.android.json.JsonConverter;
@@ -26,6 +29,7 @@ import java.util.ArrayList;
 public class Entertainment extends AppCompatActivity implements AsyncResponse {
     private ArrayList<entertainmentDB> entertainmentList;
     private ListView lvEntertainment;
+    private Button Button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +46,7 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        Button = (Button) findViewById(R.id.btWebsiteEntertainment);
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Entertainment.this, this );
         taskRead.execute("http://www.regjisori.com/pcg/Entertainment/Entertainment.php");
     }
@@ -86,6 +90,25 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
             @Override
             public String getStringValue(entertainmentDB entertainmentDB, int i) {
                 return "" + entertainmentDB.pershkrimi;
+            }
+        });
+        dict.addStringField(R.id.btWebsiteEntertainment, new StringExtractor<entertainmentDB>() {
+            @Override
+            public String getStringValue(entertainmentDB entertainmentDB, int i) {
+                return "";
+            }
+        }).onClick(new ItemClickListener<entertainmentDB>() {
+
+            @Override
+            public void onClick(entertainmentDB entertainmentDB, int position, View view) {
+                String url =entertainmentDB.website;
+                //intenta qe te dergon te website ne te cilen klikojm
+                //sipas tdhanave ne databaz vendoset tek
+                //String url = emri websitit ne databaz
+                //dhe intenta na dergon ne websit
+                Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(in);
+
             }
         });
         dict.addDynamicImageField(R.id.ivImazhiEntertainment,
