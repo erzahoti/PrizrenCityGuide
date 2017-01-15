@@ -26,6 +26,8 @@ public class ContactUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mSubmitButton = (Button) findViewById(R.id.submit_contact);
         mTxtMessage = (EditText) findViewById(R.id.message_contact);
         //mEmailFrom = (EditText) findViewById(R.id.email_contact);

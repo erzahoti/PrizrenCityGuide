@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class ReadMore extends AppCompatActivity {
+public class ReadMore extends AppCompatActivity  {
     ArrayList<String> str;
 
     @Override
@@ -59,6 +59,9 @@ public class ReadMore extends AppCompatActivity {
 
         }
     }
+
+
+    //klasa ne vazhdim eshte per marrjen e stringut dhe kthimin e tij ne fotografi/link
 
     private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
