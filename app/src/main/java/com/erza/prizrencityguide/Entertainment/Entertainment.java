@@ -105,7 +105,7 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
                 //intenta qe te dergon te website ne te cilen klikojm
                 //sipas tdhanave ne databaz vendoset tek
                 //String url = emri websitit ne databaz
-                //dhe intenta na dergon ne websit
+                //dhe intenta na dergon ne websit..
                 Intent in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(in);
 
