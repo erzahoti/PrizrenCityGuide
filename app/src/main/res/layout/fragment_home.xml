@@ -5,17 +5,44 @@
              tools:context="com.erza.prizrencityguide.Fragments.Home">
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventet_kulturore"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
+        android:text="Cultural  Events"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/eventet_sportive"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventet_sportive"
+        android:background="@android:color/black"
+        android:text="Sports   Events"
+        android:textStyle="bold|italic"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
         android:text="Activities in Prizren:"
         android:fontFamily="sans-serif-smallcaps"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
+        android:textStyle="bold"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_marginTop="13dp"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/eventet_kulturore"
         android:layout_centerHorizontal="true" />
 
 
