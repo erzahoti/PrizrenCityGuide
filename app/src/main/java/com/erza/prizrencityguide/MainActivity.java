@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     ImageButton next;
     ImageButton previous;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
