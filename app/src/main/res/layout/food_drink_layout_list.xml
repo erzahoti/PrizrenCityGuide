@@ -35,12 +35,14 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-20dp">
+            android:layout_marginStart="-20dp"
+            android:layout_marginLeft="-20dp">
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -184,13 +186,15 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-20dp">
+            android:layout_marginStart="-20dp"
+            android:layout_marginLeft="-20dp">
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:layout_marginLeft="10dp">
 
                 <TableRow
                     android:layout_width="match_parent"
