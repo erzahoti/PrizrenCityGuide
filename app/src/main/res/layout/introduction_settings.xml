@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher_logo"
+        android:id="@+id/img_Logo"
+        android:layout_weight="0.15"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:text="Prizren City Guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:lineSpacingExtra="10sp"
+        android:typeface="normal"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:layout_weight="0.79"
+        android:id="@+id/frameLayout_info">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@android:style/Widget.DeviceDefault.Light.ScrollView">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:text="Lorem ipsum dolor sit amet, magnam nulla magna vel nulla condimentum pede, at orci, sollicitudin leo. Sodales egestas, sem commodo orci, lobortis et purus pede volutpat, ante vehicula turpis eu, mi amet lacus libero id amet. Elementum magnis mattis nunc ut mauris nunc, non ac lorem ipsum lectus consequat, suspendisse in, in nullam sit. Ac tortor odio consectetuer. Est libero rhoncus id et id, id tellus laoreet rutrum odio consectetuer lacinia. Nascetur etiam congue convallis risus in, est euismod lobortis imperdiet a aliquam morbi, etiam velit adipiscing, hac imperdiet mauris. Aliquam conubia varius nulla, ac sagittis quam sit non, pulvinar pellentesque, praesent tempor, semper in at. Nam vestibulum et, elit pulvinar nulla aliquip, arcu eros vitae et. Aptent elit. Rutrum tempus, dictum aliquam id metus vitae accumsan, vitae augue quis quam ornare tortor, arcu ultricies non lobortis a, eu hymenaeos. Erat rhoncus rutrum magna in etiam, ut et elit amet ac, pede enim, dui pulvinar. Faucibus quisque orci varius enim in fringilla, in sit ipsum venenatis dictum integer pede, porta nec scelerisque orci consequat libero, consequat nibh sit nunc eu, tortor faucibus sed sem. Ultricies et vel, quis volutpat, hymenaeos laboris. Ac feugiat fringilla aliquid pellentesque libero, purus mi, ipsum metus purus mauris eget ac nisl, non purus nisl cursus. Sed aenean dictum vehicula ut mi, ac augue auctor neque donec, volutpat nisl, vitae tellus id mauris tincidunt eget. Libero in urna suspendisse, augue fusce tempora montes eu urna, montes vulputate elit id in. Congue tincidunt tempus massa, per augue felis gravida habitasse, eu adipiscing interdum id proin augue eu. Ultrices id rerum, urna faucibus commodo, congue metus duis est lacinia arcu. Mauris dui iaculis elementum dictumst massa. Non ligula amet velit. Bibendum ut in purus, et mauris in diam ut, egestas a sit tempus vitae ligula, et pellentesque justo sed, mattis ligula lorem lobortis. Arcu vehicula sed a erat orci fringilla, nulla vestibulum, non sed, ut sed ac faucibus a dis iaculis. Cras elit a ligula tempor ipsum vitae, molestie fusce. In sagittis penatibus facilisis dignissim dolor. Mauris a pulvinar, duis mattis aliquam lorem urna, mi mauris sit metus pellentesque, ut vivamus fusce ante vitae duis. Quisque massa enim, taciti nibh mauris libero ut ultrices, vulputate feugiat sit. Ut est aliquam, vivamus quis justo pellentesque dolor, mi felis, lacus est posuere massa eu commodo. Ligula maecenas porta eleifend donec, urna semper hendrerit. Ut lorem scelerisque, hendrerit libero bibendum cum urna erat scelerisque, sem elementum vitae, id quis tincidunt lobortis. Duis nullam, ornare aliquam in at et tristique, lectus phasellus donec, est id diam est urna, dapibus nam penatibus."
+                android:textAlignment="center"
+                android:textColor="?attr/colorControlNormal"/>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
