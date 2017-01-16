@@ -38,15 +38,9 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Krijimi i nje objekti te imazhit
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
+        ImageView imageView = (ImageView) findViewById(R.id.busses_map);
 
-        // Vendosja e imazhit ne Glide
-        // Glide eshte librari per shfaqjen e imazheve me disa mundesi te ndryshme
         Glide.with(this).load(R.drawable.busses_map).into(imageView);
-
-        // Nese shtypet imazhi do te krijohet inenta e cila i dergon shfrytezuesit
-        // ne nje aktivitet tjeter
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +48,6 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
                 startActivity(i);
             }
         });
-
 
 //        Ky kod eshte lene per cdo rast te riperdoret me vone
 
@@ -95,66 +88,75 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
         // Te dhenat merren nga JSON-i dhe vendosen ne nje liste
         productList = new JsonConverter<BussesDB>().toArrayList(s, BussesDB.class);
 
-        // Imazhet te cilat mund te vendosen ne karta
-        int listImages[] = new int[]{R.drawable.bus_icon};
+        // Pyesim se a eshte lista productList null a jo. Kete e bejme per shkak
+        // qe ne rastin e mosqasjes  ne internet ne aplikacion, te mos te na dale error
+        if (productList != null) {
 
-        // Krijimi i nje liste te kartes
-        ArrayList<Card> cards = new ArrayList<Card>();
+            // Imazhet te cilat mund te vendosen ne karta
+            int listImages[] = new int[]{R.drawable.bus_icon};
 
-        // Per cdo element ne listen e produkteve krijohet nje karte
-        for (int i = 0; i<productList.size(); i++) {
+            // Krijimi i nje liste te kartes
+            ArrayList<Card> cards = new ArrayList<Card>();
 
-            // Krijimi i kartes
-            Card card = new Card(this);
+            // Per cdo element ne listen e produkteve krijohet nje karte
+            for (int i = 0; i < productList.size(); i++) {
 
-            // Krijimi i nje titulli per karte
-            CardHeader header = new CardHeader(this);
-            header.setTitle(productList.get(i).linja);
-            card.addCardHeader(header);
+                // Krijimi i kartes
+                Card card = new Card(this);
 
-            // Shtimi i nje permbajtjes ne karte
-            String content = "\nRoute "+(i+1)+ "\nBus Fare: 0.50 €";
-            card.setTitle(content);
+                // Krijimi i nje titulli per karte
+                CardHeader header = new CardHeader(this);
+                header.setTitle(productList.get(i).linja);
+                card.addCardHeader(header);
 
-            // Krijimi i nje thumbnail-i per karte
-            CardThumbnail thumb = new CardThumbnail(this);
-            thumb.setDrawableResource(listImages[0]);
-            card.addCardThumbnail(thumb);
+                // Shtimi i nje permbajtjes ne karte
+                String content = "\nRoute " + (i + 1) + "\nBus Fare: 0.50 €";
+                card.setTitle(content);
 
-            // Vendosja e kartes ne vargun e kartave
-            cards.add(card);
+                // Krijimi i nje thumbnail-i per karte
+                CardThumbnail thumb = new CardThumbnail(this);
+                thumb.setDrawableResource(listImages[0]);
+                card.addCardThumbnail(thumb);
 
-            // Mundesia e kartes per t'u klikuar
-            card.setClickable(true);
+                // Vendosja e kartes ne vargun e kartave
+                cards.add(card);
 
-            /* Vendosja e nje listener-i qe kur te shtypet karta t'i dergoje shfrytezuesit
+                // Mundesia e kartes per t'u klikuar
+                card.setClickable(true);
+                final ArrayList<String> shtesa = new ArrayList<String>();
+                shtesa.add(0, productList.get(i).linja);
+                shtesa.add(1, productList.get(i).orari);
+                shtesa.add(2, productList.get(i).koment_shtese);
+
+
+                /* Vendosja e nje listener-i qe kur te shtypet karta t'i dergoje shfrytezuesit
                 ne nje aktivitet tjeter */
-            card.setOnClickListener(new Card.OnCardClickListener() {
-                @Override
-                public void onClick(Card card, View view) {
+                card.setOnClickListener(new Card.OnCardClickListener() {
+                    @Override
+                    public void onClick(Card card, View view) {
 
-                    // Krijimi i intentes per ta derguar shfryetzuesin ne aktivitetin Routes
-                    Intent intent = new Intent(Busses.this,Routes.class);
-                    intent.putExtra("route", card.getTitle());
-                    startActivity(intent);
-                }
-            });
+                        // Krijimi i intentes per ta derguar shfryetzuesin ne aktivitetin Routes
+                        Intent intent = new Intent(Busses.this, Routes.class);
+                        intent.putStringArrayListExtra("shtesa", shtesa);
+                        startActivity(intent);
+                    }
+                });
 
+            }
+
+            // Ketu permblidhen kartat dhe vendosen ne nje varg te adapaterit
+            CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards);
+
+            //Krijohet nje CardListView e cila do t'i permbaje keto karta
+            CardListView listView = (CardListView) this.findViewById(R.id.cardListView);
+
+            //nese vargu nuk eshte i zbrazet keto vendosen ne View
+            if (listView != null) {
+
+                // Vendosen te dhenat ne adapater
+                listView.setAdapter(mCardArrayAdapter);
+            }
         }
-
-        // Ketu permblidhen kartat dhe vendosen ne nje varg te adapaterit
-        CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(this, cards);
-
-        //Krijohet nje CardListView e cila do t'i permbaje keto karta
-        CardListView listView = (CardListView) this.findViewById(R.id.cardListView);
-
-        //nese vargu nuk eshte i zbrazet keto vendosen ne View
-        if (listView != null) {
-
-            // Vendosen te dhenat ne adapater
-            listView.setAdapter(mCardArrayAdapter);
-
-    }
 
 
 

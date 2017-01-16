@@ -38,26 +38,33 @@
             android:label="@string/title_activity_monuments"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".FoodDrink.FoodDrink"
+        <activity
+            android:name=".FoodDrink.FoodDrink"
             android:label="Food and Drink"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Monuments.ReadMore">
         </activity>
-
-        <activity android:name=".Accommodation.Accommodation"
-                  android:label="Accommodation"
-                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Accommodation.Accommodation"
+            android:label="Accommodation"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Busses.Busses"
             android:label="@string/title_activity_busses"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
-        <activity android:name=".Busses.Routes">
+        <activity android:name=".Busses.Routes"
+            android:label="Route"
+            android:screenOrientation="portrait"
+            >
         </activity>
         <activity android:name=".Busses.BussesMap">
         </activity>
-
+        <activity android:name=".Busses.ViewPhoto"
+                  android:label="Bus Timetable"
+                  android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>
