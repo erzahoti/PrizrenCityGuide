@@ -15,6 +15,7 @@ import com.kosalgeek.android.json.JsonConverter;
 import com.kosalgeek.genasync12.AsyncResponse;
 import com.kosalgeek.genasync12.PostResponseAsyncTask;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import it.gmariotti.cardslib.library.internal.Card;

@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -56,10 +57,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Busses.Routes"
+        <activity
+            android:name=".Busses.Routes"
             android:label="Route"
-            android:screenOrientation="portrait"
-            >
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Busses.BussesMap">
         </activity>
@@ -69,9 +70,14 @@
         </activity>
         <activity android:name=".PreferencesActivity">
         </activity>
-        <activity android:name=".Busses.ViewPhoto"
-                  android:label="Bus Timetable"
-                  android:screenOrientation="landscape">
+        <activity
+            android:name=".Busses.ViewPhoto"
+            android:label="Bus Timetable"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".PracticalInformation"
+                  android:label="Practical Information"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
