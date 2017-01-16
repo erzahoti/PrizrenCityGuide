@@ -16,10 +16,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.erza.prizrencityguide.Events.Cultural_Events;
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity
     ViewFlipper viewFlipper;
     ImageButton next;
     ImageButton previous;
+    Button culturalButton;
 
 
     @Override
@@ -50,6 +53,17 @@ public class MainActivity extends AppCompatActivity
 
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
+
+        culturalButton= (Button) findViewById(R.id.eventet_kulturore);
+        culturalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(MainActivity.this, "Cultural Events", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, Cultural_Events.class);
+                startActivity(i);
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -128,7 +142,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
         } else if (id == R.id.nav_events) {
-            return true;
+            Toast.makeText(MainActivity.this, "Cultural Events", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, Cultural_Events.class);
+            startActivity(i);
         } else if (id == R.id.nav_monuments) {
             Toast.makeText(MainActivity.this, "Monuments", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Monuments.class);

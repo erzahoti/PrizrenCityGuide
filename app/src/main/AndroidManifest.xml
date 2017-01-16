@@ -73,6 +73,10 @@
                   android:label="Bus Timetable"
                   android:screenOrientation="landscape">
         </activity>
+        <activity
+            android:name=".Events.Cultural_Events"
+            android:label="Cultural Events "
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
