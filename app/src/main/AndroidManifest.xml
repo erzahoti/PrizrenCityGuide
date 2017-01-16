@@ -77,6 +77,12 @@
             android:name=".Events.Cultural_Events"
             android:label="Cultural Events "
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".AboutUs.AboutUs"
+            android:label="@string/title_activity_about_ust"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
