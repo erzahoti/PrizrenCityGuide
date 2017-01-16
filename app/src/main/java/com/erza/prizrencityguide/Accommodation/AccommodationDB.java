@@ -24,5 +24,7 @@ public class AccommodationDB {
         public String pershkrimi;
         @SerializedName("imazhi_link")
         public String imazhi_link;
+        @SerializedName("website")
+        public String website;
     }
 

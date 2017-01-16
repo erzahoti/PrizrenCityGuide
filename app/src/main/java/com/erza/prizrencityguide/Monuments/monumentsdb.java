@@ -18,4 +18,7 @@ public class monumentsdb {
     public String pershkrimi;
     @SerializedName("imazhi_link")
     public String imazhi_link;
+    @SerializedName("read_more")
+    public String read_more = "Read more...";
+
 }

@@ -39,10 +39,12 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".FoodDrink.FoodDrink"
+            android:name=".FoodDrink.Food_Drink"
             android:label="Food and Drink"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Monuments.ReadMore">
+        <activity
+            android:name=".Monuments.ReadMore"
+            android:label="Read More">
         </activity>
         <activity
             android:name=".Accommodation.Accommodation"
@@ -60,6 +62,12 @@
             >
         </activity>
         <activity android:name=".Busses.BussesMap">
+        </activity>
+        <activity
+            android:name=".ContactUs"
+            android:label="Contact Us">
+        </activity>
+        <activity android:name=".PreferencesActivity">
         </activity>
         <activity android:name=".Busses.ViewPhoto"
                   android:label="Bus Timetable"
