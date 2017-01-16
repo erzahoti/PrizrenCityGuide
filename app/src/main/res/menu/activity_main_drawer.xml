@@ -33,6 +33,11 @@
             android:id="@+id/nav_busses"
             android:icon="@mipmap/ic_busses"
             android:title="Busses"/>
+
+        <item
+            android:id="@+id/nav_practical_information"
+            android:icon="@mipmap/ic_about_us"
+            android:title="Practical Information"/>
     </group>
 
     <item android:title="Communicate"

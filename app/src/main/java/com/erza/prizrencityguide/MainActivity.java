@@ -182,13 +182,19 @@ public class MainActivity extends AppCompatActivity
             Intent i = new Intent(MainActivity.this, Accommodation.class);
             startActivity(i);
 
-        }else if (id == R.id.nav_busses) {
+        } else if (id == R.id.nav_busses) {
 
             Toast.makeText(this, "Busses", Toast.LENGTH_SHORT).show();
             Busses busses = new Busses();
             //FragmentManager manager = getSupportFragmentManager();
             //manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
             Intent i = new Intent(MainActivity.this, Busses.class);
+            startActivity(i);
+
+        } else if(id == R.id.nav_practical_information) {
+
+            Toast.makeText(this, "Practical Information", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, PracticalInformation.class);
             startActivity(i);
 
         } else if (id == R.id.nav_about_us) {
