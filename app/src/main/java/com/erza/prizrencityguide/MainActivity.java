@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     ImageButton next;
     ImageButton previous;
     Button culturalButton;
+    TextView tvUsername;
 
 
     @Override
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tvUsername = (TextView) findViewById(R.id.tv_Username);
+        //Intent intent = getIntent();
+
+        //String username = intent.getStringExtra("username");
+
+        //tvUsername.setText(username);
 
         viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
         next=(ImageButton) findViewById(R.id.next);
