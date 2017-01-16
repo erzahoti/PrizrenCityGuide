@@ -184,7 +184,9 @@
         android:layout_below="@+id/viewFlipper"
         android:layout_marginBottom="16dp"
         android:id="@+id/tvHello"
-        android:textSize="18sp"/>
+        android:textSize="24sp"
+        android:fontFamily="cursive"
+        android:textStyle="normal|bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -194,8 +196,9 @@
         android:layout_toEndOf="@+id/tvHello"
         android:layout_below="@+id/viewFlipper"
         android:id="@+id/tv_Username"
-        android:textSize="18sp"
-        android:text="Prizren Tourist"/>
+        android:textSize="24sp"
+        android:text="Prizren Tourist"
+        android:fontFamily="cursive"/>
 
 
 </RelativeLayout>
