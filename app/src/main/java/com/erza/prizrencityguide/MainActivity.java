@@ -1,10 +1,7 @@
 package com.erza.prizrencityguide;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -16,18 +13,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.erza.prizrencityguide.FoodDrink.Food_Drink;
+import com.erza.prizrencityguide.AboutUs.AboutUs;
 import com.erza.prizrencityguide.Accommodation.Accommodation;
+import com.erza.prizrencityguide.Busses.Busses;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
+import com.erza.prizrencityguide.Events.Cultural_Events;
+import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
-import com.erza.prizrencityguide.Busses.Busses;
-
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 
 public class MainActivity extends AppCompatActivity
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity
     ViewFlipper viewFlipper;
     ImageButton next;
     ImageButton previous;
+    Button culturalButton;
+    TextView tvUsername;
 
 
     @Override
@@ -44,12 +45,29 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tvUsername = (TextView) findViewById(R.id.tv_Username);
+
+        //Intent intent = getIntent();
+        //String username = intent.getStringExtra("username");
+        //tvUsername.setText(username);
+
         viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
         next=(ImageButton) findViewById(R.id.next);
         previous=(ImageButton) findViewById(R.id.prev);
 
         next.setOnClickListener(this);
         previous.setOnClickListener(this);
+
+        culturalButton= (Button) findViewById(R.id.eventet_kulturore);
+        culturalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(MainActivity.this, "Cultural Events", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, Cultural_Events.class);
+                startActivity(i);
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -128,7 +146,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.content_frame, home, home.getTag()).commit();
         } else if (id == R.id.nav_events) {
-            return true;
+            Toast.makeText(MainActivity.this, "Cultural Events", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, Cultural_Events.class);
+            startActivity(i);
         } else if (id == R.id.nav_monuments) {
             Toast.makeText(MainActivity.this, "Monuments", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MainActivity.this, Monuments.class);
@@ -176,6 +196,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_about_us) {
+
+            Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+            AboutUs aboutus = new AboutUs();
+            //FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+            Intent i = new Intent(MainActivity.this, AboutUs.class);
+            startActivity(i);
 
             return true;
         } else if (id == R.id.nav_contact) {

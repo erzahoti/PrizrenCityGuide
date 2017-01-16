@@ -46,6 +46,7 @@ public class Entertainment extends AppCompatActivity implements AsyncResponse {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         Button = (Button) findViewById(R.id.btWebsiteEntertainment);
         PostResponseAsyncTask taskRead = new PostResponseAsyncTask(Entertainment.this, this );
         taskRead.execute("http://www.regjisori.com/pcg/Entertainment/Entertainment.php");

@@ -1,0 +1,224 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.erza.prizrencityguide.AboutUs.TeamFragment">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@color/card_background"
+            android:id="@+id/bgWhite"
+            android:background="@drawable/card_background"
+            android:paddingLeft="20dp"
+            android:paddingEnd="-20dp"/>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:text="Prizren City Guide Developers"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/PZDevelopers"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:background="@color/colorAccent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="24sp"
+                    android:textColor="@color/card_background"/>
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@mipmap/erza"
+                android:id="@+id/ivErza"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:text="ERZA HOTI"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvErza"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="24sp"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/BB_BottomBarBadge_Text"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:text="Studies at University of Prizren"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvErzaUPZ"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
+                android:textColor="@color/bb_darkBackgroundColor"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@mipmap/besa"
+                android:id="@+id/ivBesa"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:text="BESMIRE THAQI"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBesa"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="24sp"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/BB_BottomBarBadge_Text"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:text="Studies at University of Prizren"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBesaUPZ"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
+                android:textColor="@color/bb_darkBackgroundColor"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@mipmap/donika"
+                android:id="@+id/ivBesa"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:text="DONIKA JUSUFI"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBesa"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="24sp"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/BB_BottomBarBadge_Text"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:text="Studies at University of Prizren"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvBesaUPZ"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
+                android:textColor="@color/bb_darkBackgroundColor"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@mipmap/valon"
+                android:id="@+id/ivValon"
+                android:layout_height="200dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:text="VALON KITO"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvValon"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="24sp"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/BB_BottomBarBadge_Text"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:text="Studies at University of Prizren"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvValonUPZ"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
+                android:textColor="@color/bb_darkBackgroundColor"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@mipmap/xoni"
+                android:id="@+id/ivEgzi"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <TextView
+                android:text="EGZON GOLLOPENI"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEgzi"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="24sp"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/BB_BottomBarBadge_Text"
+                android:fontFamily="sans-serif-medium"/>
+
+            <TextView
+                android:text="Studies at University of Prizren"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEgziUPZ"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/bb_darkBackgroundColor"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

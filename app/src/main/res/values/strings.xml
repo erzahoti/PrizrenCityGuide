@@ -28,6 +28,7 @@
     <string name="title_activity_busses">Busses</string>
     <string name="title_timetable">Timetable:\n(Click for detailed view)</string>
     <string name="busses_route_info">Bus fare: 50c</string>
+    <string name="title_activity_about_ust">About Us</string>
 
 
 </resources>
