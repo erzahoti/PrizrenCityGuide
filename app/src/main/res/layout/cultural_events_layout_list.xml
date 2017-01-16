@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_collapseParallaxMultiplier="1.0"
+    android:weightSum="1"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+
+
+
+    <FrameLayout
+
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:backgroundTint="@android:color/transparent">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp"
+            android:layout_marginLeft="-20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/ic_entertainment"
+                        android:id="@+id/ivImazhi"/>
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Emri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvName"
+                        android:layout_weight="0.11"
+                        android:fontFamily="helvetica"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorPrimary"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/ic_events"
+                        android:id="@+id/imageView4"/>
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Lloji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvLloji"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="italic"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/map"
+                        android:id="@+id/imageView8"/>
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Lokacioni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvLokacioni"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"/>
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <LinearLayout
+
+        android:background="@drawable/corner"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp"
+            android:layout_marginLeft="-20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:padding="20dp"
+                android:layout_marginLeft="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <TextView
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:text="Pershkrimi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvPershkrimi"
+                        android:layout_weight="0.11"
+                        android:fontFamily="sans-serif"
+                        android:elegantTextHeight="false"
+                        android:breakStrategy="simple"
+                        android:lineSpacingExtra="12sp"
+                        android:linksClickable="true"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="6dp"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorPrimary"/>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <Button
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="More info..."
+                        android:padding="20dp"
+                        android:onClick="sendToWeb"
+                        android:id="@+id/button_id"
+                    android:background="#191919"
+                    android:textColor="@color/white"
+                    android:layout_gravity="left"
+                    />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
