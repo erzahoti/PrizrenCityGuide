@@ -1,10 +1,7 @@
 package com.erza.prizrencityguide;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -21,15 +18,14 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.erza.prizrencityguide.AboutUs.AboutUs;
+import com.erza.prizrencityguide.Accommodation.Accommodation;
+import com.erza.prizrencityguide.Busses.Busses;
+import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Events.Cultural_Events;
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
-import com.erza.prizrencityguide.Accommodation.Accommodation;
-import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
-import com.erza.prizrencityguide.Busses.Busses;
-
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 
 public class MainActivity extends AppCompatActivity
@@ -186,6 +182,13 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_about_us) {
+
+            Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+            AboutUs aboutus = new AboutUs();
+            //FragmentManager manager = getSupportFragmentManager();
+            //manager.beginTransaction().replace(R.id.content_frame, busses, busses.getTag()).commit();
+            Intent i = new Intent(MainActivity.this, AboutUs.class);
+            startActivity(i);
 
             return true;
         } else if (id == R.id.nav_contact) {
