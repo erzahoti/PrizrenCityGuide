@@ -44,5 +44,4 @@
         android:id="@+id/tv_Username"
         android:textSize="18sp"/>
 
-
 </RelativeLayout>

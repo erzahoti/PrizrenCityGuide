@@ -46,10 +46,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         tvUsername = (TextView) findViewById(R.id.tv_Username);
+
         //Intent intent = getIntent();
-
         //String username = intent.getStringExtra("username");
-
         //tvUsername.setText(username);
 
         viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);

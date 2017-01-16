@@ -7,7 +7,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:titleTextStyle">@color/yellow</item>
-        <item name="android:editTextBackground">@style/editTextBackgroundCustomTheme</item>
         <item name="android:textViewStyle">@color/colorAccent</item>
     </style>
 

@@ -38,7 +38,8 @@ public class PreferencesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Intent intent = new Intent(PreferencesActivity.this, MainActivity.class);
-                //intent.putExtra("username", etUsername.getText().toString());
+                //.putExtra("username", etUsername.getText().toString());
+                //startActivity(intent);
             }
         });
 
