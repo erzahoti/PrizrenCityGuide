@@ -12,7 +12,7 @@
 
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-                tools:context="com.erza.prizrencityguide.PracticalInformation"
+                tools:context="com.erza.prizrencityguide.PracticalInformation.PracticalInformation"
                 tools:showIn="@layout/activity_practical_information">
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,13 +57,21 @@
             android:textColor="@android:color/black"
             android:id="@+id/currency_show"/>
 
-         <Button
-             android:layout_toRightOf="@+id/currency_show"
-             android:layout_below="@+id/currency_converter_banner"
-             android:id="@+id/currency_button"
-             app:layout_widthPercent="30%"
-             app:layout_heightPercent="15%"
-             android:text="Convert\nanother"/>
+        <Button
+            android:layout_toRightOf="@+id/currency_show"
+            android:layout_below="@+id/currency_converter_banner"
+            android:id="@+id/currency_button"
+            app:layout_widthPercent="30%"
+            app:layout_heightPercent="15%"
+            android:text="Convert\nanother"/>
+
+        <Button
+            android:layout_below="@+id/currency_show"
+            android:id="@+id/weatheractivity_button"
+            app:layout_widthPercent="30%"
+            app:layout_heightPercent="15%"
+            android:text="Weather"/>
+
         </android.support.percent.PercentRelativeLayout>
     </LinearLayout>
 </ScrollView>

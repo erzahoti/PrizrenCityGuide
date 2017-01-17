@@ -70,7 +70,7 @@
         </activity>
         <activity android:name=".PreferencesActivity">
         </activity>
-        <activity android:name=".PracticalInformation"
+        <activity android:name=".PracticalInformation.PracticalInformation"
                   android:label="Practical Information"
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
@@ -93,6 +93,9 @@
         <activity
             android:name=".Events.Sport_Events_Details"
             android:label="@string/title_activity_sport_events_details">
+        </activity>
+        <activity android:name=".PracticalInformation.Weather.WeatherActivity"
+                  android:label="Weather">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.erza.prizrencityguide;
+package com.erza.prizrencityguide.PracticalInformation;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -16,19 +16,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.erza.prizrencityguide.PracticalInformation.Weather.WeatherActivity;
+import com.erza.prizrencityguide.R;
 import com.kosalgeek.genasync12.AsyncResponse;
 import com.kosalgeek.genasync12.PostResponseAsyncTask;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardGridArrayAdapter;
@@ -52,6 +51,15 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
 
         ImageView imageView = (ImageView) findViewById(R.id.emergency_numbers);
         Glide.with(this).load(R.drawable.emergency_numbers).into(imageView);
+
+        Button weather_button = (Button) findViewById(R.id.weatheractivity_button);
+        weather_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(PracticalInformation.this, WeatherActivity.class);
+                startActivity(i);
+            }
+        });
 
         ArrayList<Card> cards = new ArrayList<Card>();
         int listImages[] = new int[]{R.drawable.sos_icon, R.drawable.police_icon, R.drawable.firefighter_icon, R.drawable.ambulance_icon};

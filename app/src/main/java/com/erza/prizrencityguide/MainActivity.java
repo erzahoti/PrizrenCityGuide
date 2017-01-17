@@ -28,6 +28,7 @@ import com.erza.prizrencityguide.Events.Sport_Events;
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
+import com.erza.prizrencityguide.PracticalInformation.PracticalInformation;
 
 
 public class MainActivity extends AppCompatActivity
