@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".Splash"
+                android:background="@drawable/pzcity">
+
+
+<ImageView
+    android:layout_width="80dp"
+    android:layout_height="100dp"
+    app:srcCompat="@mipmap/ic_logo"
+    android:id="@+id/imageView15"
+    android:layout_marginTop="143dp"
+    android:src="@mipmap/ic_logo"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"/>
+
+<TextView
+    android:text="Prizren City Guide"
+    android:layout_width="97dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/txt"
+    android:textSize="36sp"
+    android:textColor="@color/card_background"
+    android:fontFamily="cursive"
+    android:textStyle="normal|bold"
+    android:textAlignment="center"
+    android:clickable="true"
+    android:elevation="1dp"
+    android:layout_below="@+id/imageView15"
+    android:layout_centerHorizontal="true"/>
+</RelativeLayout>
