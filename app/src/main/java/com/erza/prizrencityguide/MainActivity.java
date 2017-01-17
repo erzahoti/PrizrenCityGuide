@@ -46,11 +46,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         tvUsername = (TextView) findViewById(R.id.tv_Username);
-
-        //Intent intent = getIntent();
-        //String username = intent.getStringExtra("username");
-        //tvUsername.setText(username);
-
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("username");
+        if(username == null){
+            tvUsername.setText("Prizren Tourist");
+        }else {
+            tvUsername.setText(username);
+        }
         viewFlipper= (ViewFlipper) findViewById(R.id.viewFlipper);
         next=(ImageButton) findViewById(R.id.next);
         previous=(ImageButton) findViewById(R.id.prev);
