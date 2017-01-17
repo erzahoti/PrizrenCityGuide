@@ -1,11 +1,13 @@
 package com.erza.prizrencityguide.Busses;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,25 +27,28 @@ public class Routes extends AppCompatActivity {
         Intent intent = getIntent();
         final ArrayList<String> shtesa = intent.getStringArrayListExtra("shtesa");
 
-        ImageView img = (ImageView) findViewById(R.id.busclipart);
-        Glide.with(this).load(R.drawable.busses_clipart).into(img);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
 
-        ImageView img2 = (ImageView) findViewById(R.id.bustimetablepreview);
-        Glide.with(this).load(shtesa.get(1)).into(img2);
-        img2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Routes.this, ViewPhoto.class);
-                i.putExtra("timetable", shtesa.get(1));
-                startActivity(i);
-            }
-        });
+            setTitle(shtesa.get(0)+" (Timetable)");
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            ImageView img2 = (ImageView) findViewById(R.id.bustimetable);
+            Glide.with(this).load(shtesa.get(1)).into(img2);
 
+        }else{
 
-        // Ketu do te vendosen te dhenat mbi linjat...
+            setTitle("Route");
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Ketu eshte marre "extra" e derguar nga intenta nga Busses
-        TextView route = (TextView) findViewById(R.id.route_id);
-        route.setText(shtesa.get(0));
+            ImageView img2 = (ImageView) findViewById(R.id.bustimetablepreview);
+            Glide.with(this).load(shtesa.get(1)).into(img2);
+
+            ImageView img = (ImageView) findViewById(R.id.busclipart);
+            Glide.with(this).load(R.drawable.busses_clipart).into(img);
+
+            TextView route = (TextView) findViewById(R.id.route_id);
+            route.setText(shtesa.get(0));
+
+        }
 
 
         // Vendoset ActionBar

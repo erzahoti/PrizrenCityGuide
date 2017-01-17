@@ -60,8 +60,7 @@
         </activity>
         <activity
             android:name=".Busses.Routes"
-            android:label="Route"
-            android:screenOrientation="portrait">
+            android:label="Route">
         </activity>
         <activity android:name=".Busses.BussesMap">
         </activity>
@@ -70,11 +69,6 @@
             android:label="Contact Us">
         </activity>
         <activity android:name=".PreferencesActivity">
-        </activity>
-        <activity
-            android:name=".Busses.ViewPhoto"
-            android:label="Bus Timetable"
-            android:screenOrientation="landscape">
         </activity>
         <activity android:name=".PracticalInformation"
                   android:label="Practical Information"
