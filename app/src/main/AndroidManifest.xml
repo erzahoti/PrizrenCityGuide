@@ -91,6 +91,15 @@
             android:label="@string/title_activity_about_ust"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Events.Sport_Events"
+            android:label="@string/title_activity_sport_events"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Events.Sport_Events_Details"
+            android:label="@string/title_activity_sport_events_details">
+        </activity>
     </application>
 
 </manifest>

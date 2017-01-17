@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:layout_collapseParallaxMultiplier="1.0"
+              android:weightSum="1"
+              android:baselineAligned="false"
+              android:orientation="vertical">
+
+    <FrameLayout
+
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="7dp"
+        android:layout_centerInParent="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="false">
+
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@color/card_background"
+            android:id="@+id/bgWhite"
+            android:background="@drawable/card_background"
+            android:layout_weight="1"
+            />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TableLayout
+                android:layout_width="361dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp">
+
+                    <ImageView
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_light"
+                        android:id="@+id/ivImazhiEkipit"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:text="Klubi"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tvEmriSport"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="14dp"
+                        android:textSize="18sp"
+                        android:layout_width="164dp"
+                        android:textStyle="normal|bold"
+                        android:textAllCaps="false"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp">
+
+                    <ImageView
+                        app:srcCompat="@drawable/common_google_signin_btn_icon_light"
+                        android:id="@+id/ivKundershtari"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+                    <TextView
+                        android:text="Klubi"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tvKundershtari"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="14dp"
+                        android:textSize="18sp"
+                        android:layout_width="164dp"
+                        android:textStyle="normal|bold"
+                        android:textAllCaps="false"/>
+
+                    <TextView
+                        android:text="DETAILS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tvKlubiDetails"
+                        android:paddingLeft="20dp"
+                        android:textSize="18sp"
+                        android:paddingRight="36dp"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorAccent"
+                        android:paddingTop="10dp"/>
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
+
+

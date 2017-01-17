@@ -24,6 +24,7 @@ import com.erza.prizrencityguide.Accommodation.Accommodation;
 import com.erza.prizrencityguide.Busses.Busses;
 import com.erza.prizrencityguide.Entertainment.Entertainment;
 import com.erza.prizrencityguide.Events.Cultural_Events;
+import com.erza.prizrencityguide.Events.Sport_Events;
 import com.erza.prizrencityguide.FoodDrink.Food_Drink;
 import com.erza.prizrencityguide.Fragments.Home;
 import com.erza.prizrencityguide.Monuments.Monuments;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity
     ImageButton previous;
     Button culturalButton;
     TextView tvUsername;
+    Button sportButton;
 
 
     @Override
@@ -67,6 +69,16 @@ public class MainActivity extends AppCompatActivity
 
                 Toast.makeText(MainActivity.this, "Cultural Events", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, Cultural_Events.class);
+                startActivity(i);
+            }
+        });
+        sportButton= (Button) findViewById(R.id.eventet_sportive);
+        sportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(MainActivity.this, "Sport Events", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, Sport_Events.class);
                 startActivity(i);
             }
         });
