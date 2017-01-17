@@ -9,7 +9,7 @@
 
     <TextView
         android:text="Activities in Prizren:"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="casual"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         android:id="@+id/textView"
         android:textStyle="bold"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_marginBottom="143dp"
+        android:layout_marginBottom="195dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"/>
 
