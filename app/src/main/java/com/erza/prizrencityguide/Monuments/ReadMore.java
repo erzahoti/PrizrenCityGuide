@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -30,29 +31,26 @@ public class ReadMore extends AppCompatActivity  {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        str =  getIntent().getStringArrayListExtra("lista");
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("listaa", str);
 
-       str =  getIntent().getStringArrayListExtra("lista");
+        ReadMoreFragment readMoreFragment = new ReadMoreFragment();
+        readMoreFragment.setArguments(bundle);
+        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.content_readmore, readMoreFragment, readMoreFragment.getTag()).commit();
 
-        TextView emri = (TextView) findViewById(R.id.emri_monument_rm);
-        emri.setText(str.get(0).toString());
-
-        TextView lo = (TextView) findViewById(R.id.lokacioni_monument_rm);
-        lo.setText(str.get(1).toString());
-
-        new DownloadImageFromInternet((ImageView) findViewById(R.id.imazhi_monument_rm))
-                .execute(str.get(2).toString());
-
-        TextView pershkrimi = (TextView) findViewById(R.id.description_monument);
-        pershkrimi.setText(str.get(3).toString());
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
-                this.finish();
+
+
+
+                 this.finish();
                 return  true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -62,8 +60,8 @@ public class ReadMore extends AppCompatActivity  {
 
 
     //klasa ne vazhdim eshte per marrjen e stringut dhe kthimin e tij ne fotografi/link
-
-    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+/**
+    private class  DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
 
         public DownloadImageFromInternet(ImageView imageView) {
@@ -89,5 +87,5 @@ public class ReadMore extends AppCompatActivity  {
             imageView.setImageBitmap(result);
         }
     }
-
+*/
 }
