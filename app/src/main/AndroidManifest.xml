@@ -69,8 +69,6 @@
             android:name=".ContactUs"
             android:label="Contact Us">
         </activity>
-        <activity android:name=".PreferencesActivity">
-        </activity>
         <activity android:name=".PracticalInformation.PracticalInformation"
                   android:label="Practical Information"
                   android:screenOrientation="portrait"
@@ -97,6 +95,10 @@
         </activity>
         <activity android:name=".PracticalInformation.Weather.WeatherActivity"
                   android:label="Weather">
+        </activity>
+        <activity android:name=".Preferences.PreferencesActivity">
+        </activity>
+        <activity android:name=".Preferences.AppIntroduction">
         </activity>
     </application>
 
