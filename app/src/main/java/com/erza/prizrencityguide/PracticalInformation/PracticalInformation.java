@@ -52,7 +52,8 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
         ImageView imageView = (ImageView) findViewById(R.id.emergency_numbers);
         Glide.with(this).load(R.drawable.emergency_numbers).into(imageView);
 
-        Button weather_button = (Button) findViewById(R.id.weatheractivity_button);
+        ImageView weather_button = (ImageView) findViewById(R.id.weatheractivity_button);
+        Glide.with(this).load(R.drawable.weather_banner).into(weather_button);
         weather_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

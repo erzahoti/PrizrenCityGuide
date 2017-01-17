@@ -79,7 +79,7 @@ public class WeatherActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
+
 	private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
 		
 		@Override
@@ -119,11 +119,5 @@ public class WeatherActivity extends Activity {
 				
 		}
 
-
-
-
-
-
-	
   }
 }
