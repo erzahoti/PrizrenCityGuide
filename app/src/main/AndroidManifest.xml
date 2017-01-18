@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -94,6 +96,7 @@
             android:label="@string/title_activity_sport_events_details">
         </activity>
         <activity android:name=".PracticalInformation.Weather.WeatherActivity"
+                  android:screenOrientation="portrait"
                   android:label="Weather">
         </activity>
         <activity android:name=".Preferences.PreferencesActivity"

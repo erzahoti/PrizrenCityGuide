@@ -1,6 +1,9 @@
 package com.erza.prizrencityguide.Busses;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.erza.prizrencityguide.R;
@@ -50,6 +54,11 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
             }
         });
 
+        if(!isNetworkAvailable()){
+            TextView txv = (TextView) findViewById(R.id.no_net_busses);
+            txv.setText("No internet connection. The map and the route list won't show up.");
+        }
+
 //        Ky kod eshte lene per cdo rast te riperdoret me vone
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -80,6 +89,12 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
 
@@ -157,6 +172,7 @@ public class Busses extends AppCompatActivity implements AsyncResponse {
                 // Vendosen te dhenat ne adapater
                 listView.setAdapter(mCardArrayAdapter);
             }
+
         }
 
 

@@ -23,6 +23,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -195,15 +198,15 @@ public class WeatherActivity extends FragmentActivity implements OnMapReadyCallb
 				// Let's retrieve the icon
 				weather.iconData = ( (new WeatherHttpClient()).getImage(weather.currentCondition.getIcon()));
 				
-			} catch (JSONException e) {				
+			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			return weather;
 		
 	}
-		
-		
-		
+
+
+
 		
 	@Override
 		protected void onPostExecute(Weather weather) {			

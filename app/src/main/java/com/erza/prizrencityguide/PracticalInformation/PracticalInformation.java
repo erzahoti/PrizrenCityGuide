@@ -1,8 +1,11 @@
 package com.erza.prizrencityguide.PracticalInformation;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.erza.prizrencityguide.PracticalInformation.Weather.WeatherActivity;
@@ -57,8 +61,12 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
         weather_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(PracticalInformation.this, WeatherActivity.class);
-                startActivity(i);
+                if(isNetworkAvailable()){
+                    Intent i = new Intent(PracticalInformation.this, WeatherActivity.class);
+                    startActivity(i);
+                }else{
+                    Toast.makeText(PracticalInformation.this, "No internet connection.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -84,10 +92,10 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
             card.setOnClickListener(new Card.OnCardClickListener() {
                 @Override
                 public void onClick(Card card, View view) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:"+number));
+                        startActivity(intent);
 
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData(Uri.parse("tel:"+number));
-                    startActivity(intent);
                 }
             });
             cards.add(card);
@@ -135,6 +143,14 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
         });
 
 
+    }
+
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
     public void sendData(String from, String to, String amount){
@@ -185,17 +201,20 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
     @Override
     public void processFinish(String s) {
 
+        if(isNetworkAvailable()) {
+            try {
+                ArrayList<String> a = jsonStringToArray(s);
+                if (a.get(1).equals(a.get(3))) {
+                    userinputtext.setText("Same currency inputs.");
+                } else {
+                    String temp = String.format("%s %s = %s %s", a.get(0), a.get(1), a.get(2), a.get(3));
+                    userinputtext.setText(temp);
+                }
+            } catch (JSONException e) {
 
-        try{
-            ArrayList<String> a = jsonStringToArray(s);
-            if(a.get(1).equals(a.get(3))){
-                userinputtext.setText("Same currency inputs.");
-            }else {
-                String temp = String.format("%s %s = %s %s", a.get(0), a.get(1), a.get(2), a.get(3));
-                userinputtext.setText(temp);
             }
-        }catch (JSONException e){
-
+        }else{
+            userinputtext.setText("No internet connection.");
         }
 
 
