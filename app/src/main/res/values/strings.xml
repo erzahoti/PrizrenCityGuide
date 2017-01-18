@@ -32,5 +32,11 @@
     <string name="title_activity_sport_events">Sport Events</string>
     <string name="title_activity_sport_events_details">Information</string>
 
+    <string-array name="privacypolicy">
+        <item>What personal information do we collect?</item>
+        <item>When do we collect information?</item>
+        <item>How do we use your information?</item>
+        <item>How do we protect your information?</item>
+    </string-array>
 
 </resources>

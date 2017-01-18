@@ -105,6 +105,9 @@
         <activity android:name=".Preferences.AppIntroduction"
             android:label="Introduction">
         </activity>
+        <activity android:name=".Preferences.PrivacyPolicy"
+                  android:label="Privacy Policy">
+        </activity>
     </application>
 
 </manifest>

@@ -18,7 +18,7 @@ public class PreferencesActivity extends AppCompatActivity {
     Button btnOurApp;
     EditText etUsername;
     Button btnAboutUs;
-
+    Button btnPrivacyPolicy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,14 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
 
-
+        btnPrivacyPolicy = (Button) findViewById(R.id.btn_PrivacyPolicy);
+        btnPrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PreferencesActivity.this, PrivacyPolicy.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+
+    <TextSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/txtsPP"
+        android:layout_below="@+id/btnNext"/>
+
+    <Button
+        android:text="OUR POLICIES"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNext"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/tvPP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/tvPP"
+        android:text="This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context."
+        android:textAlignment="center"
+        android:layout_below="@+id/imL"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="14sp"
+        android:fontFamily="serif"/>
+
+    <TextView
+        android:text="Privacy Policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:id="@+id/txtPrivacy"
+        android:fontFamily="serif"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher_logo"
+        android:id="@+id/imL"
+        android:layout_below="@+id/txtPrivacy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+
+</RelativeLayout>
