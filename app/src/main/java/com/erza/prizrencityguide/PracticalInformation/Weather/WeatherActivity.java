@@ -14,15 +14,25 @@ import com.bumptech.glide.Glide;
 import com.erza.prizrencityguide.R;
 import com.erza.prizrencityguide.PracticalInformation.Weather.model.Location;
 import com.erza.prizrencityguide.PracticalInformation.Weather.model.Weather;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /*
  * Copyright (C) 2013 Surviving with Android (http://www.survivingwithandroid.com)
@@ -40,7 +50,7 @@ import android.widget.TextView;
  * limitations under the License.
  */
 
-public class WeatherActivity extends Activity {
+public class WeatherActivity extends FragmentActivity implements OnMapReadyCallback {
 
 	
 	private TextView cityText;
@@ -52,14 +62,15 @@ public class WeatherActivity extends Activity {
 	
 	private TextView hum;
 	private ImageView imgView;
-	
+	private GoogleMap mMap;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.weather_activity);
-		String city = "Prizren,XK";
-		
+		String city = "Pristina,XK";
+		JSONWeatherTask task = new JSONWeatherTask();
+		task.execute(new String[]{city});
 		cityText = (TextView) findViewById(R.id.cityText);
 		condDescr = (TextView) findViewById(R.id.condDescr);
 		temp = (TextView) findViewById(R.id.temp);
@@ -68,9 +79,99 @@ public class WeatherActivity extends Activity {
 		windSpeed = (TextView) findViewById(R.id.windSpeed);
 		windDeg = (TextView) findViewById(R.id.windDeg);
 		imgView = (ImageView) findViewById(R.id.condIcon);
-		
-		JSONWeatherTask task = new JSONWeatherTask();
-		task.execute(new String[]{city});
+
+		SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+				.findFragmentById(R.id.map2);
+		mapFragment.getMapAsync(this);
+
+
+	}
+
+	public void onMapReady(GoogleMap googleMap) {
+
+		mMap = googleMap;
+
+
+		LatLng kosova = new LatLng(42.615390, 20.860624);
+		LatLng prizreni = new LatLng(42.214896, 20.738030);
+		LatLng prishtina = new LatLng(42.662209, 21.165250);
+		LatLng ferizaj = new LatLng(42.368616, 21.149249);
+		LatLng gjilani = new LatLng(42.464336, 21.469419);
+		LatLng mitrovica = new LatLng(42.893159, 20.854900);
+		LatLng peja = new LatLng(42.658349, 20.288949);
+		LatLng shkupi = new LatLng(41.998563, 21.423393);
+
+
+
+		Marker pz = mMap.addMarker(new MarkerOptions()
+				.position(prizreni)
+				.title("Prizreni"));
+		pz.setTag(0);
+		Marker pr = mMap.addMarker(new MarkerOptions()
+				.position(prishtina)
+				.title("Prishtina"));
+		pz.setTag(0);
+		Marker fr = mMap.addMarker(new MarkerOptions()
+				.position(ferizaj)
+				.title("Ferizaj"));
+		pz.setTag(0);
+		Marker gjl = mMap.addMarker(new MarkerOptions()
+				.position(gjilani)
+				.title("Gjilani"));
+		pz.setTag(0);
+		Marker mv = mMap.addMarker(new MarkerOptions()
+				.position(mitrovica)
+				.title("Mitrovica"));
+		pz.setTag(0);
+		Marker pj = mMap.addMarker(new MarkerOptions()
+				.position(peja)
+				.title("Peja"));
+		pz.setTag(0);
+		Marker shk = mMap.addMarker(new MarkerOptions()
+				.position(shkupi)
+				.title("Shkupi"));
+		pz.setTag(0);
+
+
+		mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+		{
+
+			@Override
+			public boolean onMarkerClick(Marker arg0) {
+				if(arg0.getTitle().equals("Prishtina")) {
+					String city = "Pristina,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Prizreni")){
+					String city = "Prizren,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Ferizaj")){
+					String city = "Ferizaj,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Gjilani")){
+					String city = "Gjilan,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Mitrovica")){
+					String city = "Mitrovice,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Shkupi")){
+					String city = "Skopje,MK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}else if(arg0.getTitle().equals("Peja")){
+					String city = "Peje,XK";
+					JSONWeatherTask task = new JSONWeatherTask();
+					task.execute(new String[]{city});
+				}
+				return true;
+			}
+
+		});
+		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kosova, 8));
 	}
 
 	@Override
@@ -79,6 +180,7 @@ public class WeatherActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 
 	private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
 		
