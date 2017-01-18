@@ -96,9 +96,11 @@
         <activity android:name=".PracticalInformation.Weather.WeatherActivity"
                   android:label="Weather">
         </activity>
-        <activity android:name=".Preferences.PreferencesActivity">
+        <activity android:name=".Preferences.PreferencesActivity"
+            android:label="Settings">
         </activity>
-        <activity android:name=".Preferences.AppIntroduction">
+        <activity android:name=".Preferences.AppIntroduction"
+            android:label="Introduction">
         </activity>
     </application>
 

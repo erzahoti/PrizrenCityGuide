@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txt_Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:fontFamily="cursive"
         android:textAlignment="center"
         android:lineSpacingExtra="10sp"
@@ -136,7 +136,8 @@
             android:layout_height="match_parent"
             android:id="@+id/txtIntro"
             android:textSize="18sp"
-            android:textColor="@color/bb_inActiveBottomBarItemColor"/>
+            android:textColor="@color/card_expand_title_color"
+            android:fontFamily="serif"/>
     </ScrollView>
 
 </RelativeLayout>

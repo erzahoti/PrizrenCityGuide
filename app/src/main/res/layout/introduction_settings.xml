@@ -124,7 +124,8 @@
                 android:id="@+id/txtIntro"
                 android:textSize="18sp"
                 android:textAlignment="center"
-                android:textColor="@color/bb_inActiveBottomBarItemColor"/>
+                android:textColor="@color/card_expand_title_color"
+                android:fontFamily="serif"/>
         </ScrollView>
     </FrameLayout>
 </LinearLayout>

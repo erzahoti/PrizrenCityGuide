@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="com.erza.prizrencityguide.Preferences.PreferencesActivity">
 
     <Button
@@ -45,6 +45,16 @@
         android:layout_alignParentStart="true"/>
 
     <TextView
+        android:text="Basic Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_OurApp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tv_SettingsApp"
+        android:textSize="17sp"/>
+
+    <TextView
         android:text="Your Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,28 +65,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
-    <Button
-        android:text="privacy policy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_PrivacyPolicy"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="175dp"/>
-
-    <TextView
-        android:text="Basic Information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_SettingsApp"
-        android:textSize="17sp"
-        android:layout_above="@+id/btn_OurApp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp"/>
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,10 +72,21 @@
         android:text="Prizren Tourist"
         android:ems="10"
         android:id="@+id/editText_Username"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="12dp"
         android:textStyle="normal|italic"
         android:fontFamily="serif"
         android:layout_below="@+id/tv_Username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btn_SaveUsername"/>
+
+    <Button
+        android:text="privacy policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_PrivacyPolicy"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
