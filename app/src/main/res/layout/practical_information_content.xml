@@ -65,13 +65,6 @@
             android:layout_height="70dp"
             android:text="Convert\nanother"/>
 
-        <ImageView
-            android:layout_below="@+id/currency_show"
-            android:paddingTop="30dp"
-            android:id="@+id/weatheractivity_button"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"/>
-
         </android.support.percent.PercentRelativeLayout>
     </LinearLayout>
 </ScrollView>

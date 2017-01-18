@@ -22,7 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.erza.prizrencityguide.PracticalInformation.Weather.WeatherActivity;
 import com.erza.prizrencityguide.R;
 import com.kosalgeek.genasync12.AsyncResponse;
 import com.kosalgeek.genasync12.PostResponseAsyncTask;
@@ -56,19 +55,19 @@ public class PracticalInformation extends AppCompatActivity implements AsyncResp
         ImageView imageView = (ImageView) findViewById(R.id.emergency_numbers);
         Glide.with(this).load(R.drawable.emergency_numbers).into(imageView);
 
-        ImageView weather_button = (ImageView) findViewById(R.id.weatheractivity_button);
-        Glide.with(this).load(R.drawable.weather_banner).into(weather_button);
-        weather_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(isNetworkAvailable()){
-                    Intent i = new Intent(PracticalInformation.this, WeatherActivity.class);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(PracticalInformation.this, "No internet connection.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        ImageView weather_button = (ImageView) findViewById(R.id.weatheractivity_button);
+//        Glide.with(this).load(R.drawable.weather_banner).into(weather_button);
+//        weather_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(isNetworkAvailable()){
+//                    Intent i = new Intent(PracticalInformation.this, WeatherActivity.class);
+//                    startActivity(i);
+//                }else{
+//                    Toast.makeText(PracticalInformation.this, "No internet connection.", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
         ArrayList<Card> cards = new ArrayList<Card>();
         int listImages[] = new int[]{R.drawable.sos_icon, R.drawable.police_icon, R.drawable.firefighter_icon, R.drawable.ambulance_icon};

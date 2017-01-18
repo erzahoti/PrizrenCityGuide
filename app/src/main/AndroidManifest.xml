@@ -95,10 +95,6 @@
             android:name=".Events.Sport_Events_Details"
             android:label="@string/title_activity_sport_events_details">
         </activity>
-        <activity android:name=".PracticalInformation.Weather.WeatherActivity"
-                  android:screenOrientation="portrait"
-                  android:label="Weather">
-        </activity>
         <activity android:name=".Preferences.PreferencesActivity"
             android:label="Settings">
         </activity>
