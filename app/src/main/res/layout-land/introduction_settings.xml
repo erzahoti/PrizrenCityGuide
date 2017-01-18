@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.79"
+        android:id="@+id/frameLayout_info"
+        android:layout_alignParentTop="true"
+        >
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher_logo"
+        android:id="@+id/img_Logo"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_above="@+id/txt_Name"
+        android:layout_alignRight="@+id/txt_Name"
+        android:layout_alignEnd="@+id/txt_Name"
+        android:layout_marginBottom="12dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frameLayout_info"
+        android:layout_toRightOf="@+id/txt_Name"
+        android:layout_toEndOf="@+id/txt_Name">
+
+        <android.support.design.widget.FloatingActionButton
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@mipmap/ic_accommodation"
+        android:id="@+id/fl_accommodation"
+        android:layout_weight="0.02"
+        app:backgroundTint="@color/blue"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/bus_icon"
+            android:id="@+id/fl_busses"
+            app:backgroundTint="@color/blue"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="21dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@mipmap/ic_entertainment"
+            android:id="@+id/fl_entertainment"
+            app:backgroundTint="@color/blue"
+            android:layout_marginTop="17dp"
+            android:layout_below="@+id/fl_accommodation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@mipmap/ic_food_and_drink"
+            android:id="@+id/fl_fooddrink"
+            app:backgroundTint="@color/blue"
+            android:layout_marginBottom="19dp"
+            android:layout_above="@+id/fl_accommodation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@mipmap/ic_monuments"
+            android:id="@+id/fl_monuments"
+            app:backgroundTint="@color/blue"
+            android:layout_marginBottom="17dp"
+            android:layout_above="@+id/fl_fooddrink"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:text="Prizren City Guide"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="36sp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        android:lineSpacingExtra="10sp"
+        android:typeface="sans"
+        android:textColor="@color/bb_darkBackgroundColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="74dp"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@android:style/Widget.DeviceDefault.ScrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:text="This application's purpose is to somehow connect tourists with our beautiful city Prizren. We have developed the app to show informations separated into categories. These categories are about main things that a tourist can ask for, like visiting some cultural places, knowing where to eat or have a drink, having a place to rest during the night and more. The Prizren City Guide Team found the informations based on their own knowledge about the city and with the help of their main pages of places. The city of Prizren has a lot of things to visit about since it is known as a cultural and beautiful city. The informations included in the application are true since the team has taken care of getting them in the right and trustful sources. The tourists are always welcome in our city and we are more than pleased to help them in some kind of way. "
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtIntro"
+            android:textSize="18sp"
+            android:textColor="@color/card_expand_title_color"
+            android:fontFamily="serif"/>
+    </ScrollView>
+
+</RelativeLayout>

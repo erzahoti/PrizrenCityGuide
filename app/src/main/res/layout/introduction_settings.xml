@@ -33,7 +33,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06">
 
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
@@ -116,15 +117,14 @@
             android:layout_height="match_parent"
             style="@android:style/Widget.DeviceDefault.ScrollView">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/editText"
+            <TextView
                 android:text="This application's purpose is to somehow connect tourists with our beautiful city Prizren. We have developed the app to show informations separated into categories. These categories are about main things that a tourist can ask for, like visiting some cultural places, knowing where to eat or have a drink, having a place to rest during the night and more. The Prizren City Guide Team found the informations based on their own knowledge about the city and with the help of their main pages of places. The city of Prizren has a lot of things to visit about since it is known as a cultural and beautiful city. The informations included in the application are true since the team has taken care of getting them in the right and trustful sources. The tourists are always welcome in our city and we are more than pleased to help them in some kind of way. "
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtIntro"
+                android:textSize="18sp"
                 android:textAlignment="center"
-                android:textColor="@color/wallet_hint_foreground_holo_light"
+                android:textColor="@color/card_expand_title_color"
                 android:fontFamily="serif"/>
         </ScrollView>
     </FrameLayout>

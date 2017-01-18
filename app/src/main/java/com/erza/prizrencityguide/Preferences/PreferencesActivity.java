@@ -1,24 +1,23 @@
-package com.erza.prizrencityguide;
+package com.erza.prizrencityguide.Preferences;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.preference.PreferenceActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import static com.erza.prizrencityguide.R.layout.content_main;
+import com.erza.prizrencityguide.AboutUs.AboutUs;
+import com.erza.prizrencityguide.MainActivity;
+import com.erza.prizrencityguide.R;
 
 public class PreferencesActivity extends AppCompatActivity {
 
     Button btnSaveUsername;
     Button btnOurApp;
     EditText etUsername;
-    Button btnTheme1;
-    Button btnTheme2;
+    Button btnAboutUs;
 
 
     @Override
@@ -26,17 +25,17 @@ public class PreferencesActivity extends AppCompatActivity {
 
         //PreferencesActivity.this.setTheme(R.style.CustomTheme);
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         etUsername = (EditText) findViewById(R.id.editText_Username);
 
         btnOurApp = (Button) findViewById(R.id.btn_OurApp);
         btnOurApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.introduction_settings);
+                Intent intent = new Intent(PreferencesActivity.this, AppIntroduction.class);
+                startActivity(intent);
             }
         });
 
@@ -50,16 +49,30 @@ public class PreferencesActivity extends AppCompatActivity {
             }
         });
 
-        btnTheme1 = (Button) findViewById(R.id.btn_Theme1);
-        btnTheme1.setOnClickListener(new View.OnClickListener() {
+        btnAboutUs = (Button) findViewById(R.id.btn_AboutUs);
+        btnAboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //getApplication().setTheme(R.style.CustomTheme);
-                Toast.makeText(PreferencesActivity.this, "Theme 1", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(PreferencesActivity.this, AboutUs.class);
+                startActivity(intent);
             }
         });
 
 
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return  true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
 }
